@@ -12,6 +12,7 @@ Happy Code! 👨‍💻 Happy days!
     * [User Goals](#user-goals)
     * [User Stories](#user-stories)
     * [Site Owners Goals](#site-owners-goals)
+    * [User Requirements and Expectations](#user-requirements-and-expectations)
 
 ### **User Goals**
 
@@ -39,3 +40,13 @@ Happy Code! 👨‍💻 Happy days!
 * To have an appealing web application where recipes can be shared between users.
 * To have a great functionality so the user feels like this web application helps them in their day-to-day life. 
 * To make the web application where people can share experience about their recipes.
+
+### **User Requirements and Expectations**
+
+#### Requirements
+
+* Easy to navigate by using the few buttons.
+* Appealing dashboard with a functional overview.
+* Easy way to add a recipe to the dashboard.
+* Ability to edit and delete existing recipes.
+* Ability to let a review.
