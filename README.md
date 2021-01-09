@@ -16,6 +16,7 @@ Happy Code! 👨‍💻 Happy days!
         * [Requirements](#requirements)
         * [Expectations](#expectations)
     * [Design Choices](#design-choices)
+        * [Fonts](#fonts)
 
 ### **User Goals**
 
@@ -64,3 +65,9 @@ Happy Code! 👨‍💻 Happy days!
 ### **Design Choices**
 
 I made a research in [Jenn David Design](https://jenndavid.com/colors-that-influence-food-sales-infographic/ "jenndavid.com") website, where I found that a mix of red, orange and green would be a nice look for a web application that present recipes. Then I have used [Coolors](https://coolors.co/ "Coolors.co") to come up with a pallete of colors that I already had chosen.
+
+#### Fonts
+I have visited [Google Fonts](https://fonts.google.com/ "Google Fonts") in order to find appropriate fonts for my web application.
+For the titles and subtitles, I have used the font [Redressed](https://fonts.google.com/specimen/Redressed "Redressed") 
+and for the main text I have used [Bodoni Moda](https://fonts.google.com/specimen/Bodoni+Moda "Bodoni Moda"). 
+
