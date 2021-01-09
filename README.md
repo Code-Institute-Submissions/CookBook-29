@@ -13,6 +13,8 @@ Happy Code! 👨‍💻 Happy days!
     * [User Stories](#user-stories)
     * [Site Owners Goals](#site-owners-goals)
     * [User Requirements and Expectations](#user-requirements-and-expectations)
+        * [Requirements](#requirements)
+        * [Expectations](#expectations)
 
 ### **User Goals**
 
