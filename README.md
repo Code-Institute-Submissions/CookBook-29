@@ -10,6 +10,7 @@ Happy Code! 👨‍💻 Happy days!
   ## Table of contents 
 * [UX](#ux)🎯
     * [User Goals](#user-goals)
+    * [User Stories](#user-stories)
 
 ### **User Goals**
 
@@ -19,3 +20,14 @@ Happy Code! 👨‍💻 Happy days!
 * I want to see the recipes even if I don't have registered. 
 * The web application has to be user friendly.
 * Visually appealing web application.
+
+### **User Stories**
+
+* As a user, I would like to be able to register for the web application so I can have my personal environment.
+* As a user, I want to login after I created an account and see my previous inserted information.
+* As a user, I want to be able to search recipes per cuisine.
+* As a user, I want a dashboard that shows the lasts recipes added.
+* As a user, I want a dashboard that shows how many recipes per category.
+* As a user, I want to see the recipes without log in.
+* As a user, I want the web application to be easy to use. 
+* As a user, I want the process to add / edit / delete info to be easy.
