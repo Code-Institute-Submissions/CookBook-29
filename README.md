@@ -11,6 +11,7 @@ Happy Code! 👨‍💻 Happy days!
 * [UX](#ux)🎯
     * [User Goals](#user-goals)
     * [User Stories](#user-stories)
+    * [Site Owners Goals](#site-owners-goals)
 
 ### **User Goals**
 
@@ -18,6 +19,7 @@ Happy Code! 👨‍💻 Happy days!
 * I want to have a clear dashboard where I can see all the different recipes I have created. 
 * I want to have a profile for me where I can create, update and delete recipes. 
 * I want to see the recipes even if I don't have registered. 
+* I want to be able to write a review about an recipe.
 * The web application has to be user friendly.
 * Visually appealing web application.
 
@@ -29,5 +31,11 @@ Happy Code! 👨‍💻 Happy days!
 * As a user, I want a dashboard that shows the lasts recipes added.
 * As a user, I want a dashboard that shows how many recipes per category.
 * As a user, I want to see the recipes without log in.
+* As a user, I want to write a review about a recipe.
 * As a user, I want the web application to be easy to use. 
 * As a user, I want the process to add / edit / delete info to be easy.
+
+### **Site owners Goals**
+* To have an appealing web application where recipes can be shared between users.
+* To have a great functionality so the user feels like this web application helps them in their day-to-day life. 
+* To make the web application where people can share experience about their recipes.
