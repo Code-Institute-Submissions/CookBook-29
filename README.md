@@ -50,3 +50,10 @@ Happy Code! 👨‍💻 Happy days!
 * Easy way to add a recipe to the dashboard.
 * Ability to edit and delete existing recipes.
 * Ability to let a review.
+
+#### Expectations
+
+* When you have multiple recipes, it should be easy to navigate between them.
+* To have a dashboard where all the necessary information is visible.
+* It should be easy to add another recipe.
+* It should be easy to add a review in a recipe.
