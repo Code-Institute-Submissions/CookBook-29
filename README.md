@@ -18,8 +18,9 @@ Happy Code! 👨‍💻 Happy days!
     * [Design Choices](#design-choices)
         * [Fonts](#fonts)
         * [Structure](#structure)
-    * [Wireframes and Flowcharts](#wireframes-and-flowcharts)
-        * [Wireframes](#wireframes)
+* [Wireframes and Flowcharts](#wireframes-and-flowcharts)
+    * [Wireframes](#wireframes)
+    * [Flowcharts](#flowcharts)
 
     
 ### **User Goals**
@@ -94,3 +95,10 @@ You can find my wireframes below:
 
 #### Mobile Wireframes
 * [Wireframes](wireframes/mobile.pdf)
+
+### **Flowcharts**
+
+I have decided to make a flowchart to completely understand each step of the process. 
+I have used [Draw.io](https://draw.io/) to make this flowchart which you can view below: 
+
+[Flowchart](wireframes/flowchart.png)
