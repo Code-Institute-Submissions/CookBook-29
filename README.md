@@ -18,6 +18,9 @@ Happy Code! 👨‍💻 Happy days!
     * [Design Choices](#design-choices)
         * [Fonts](#fonts)
         * [Structure](#structure)
+    * [Wireframes and Flowcharts](#wireframes-and-flowcharts)
+        * [Wireframes](#wireframes)
+
     
 ### **User Goals**
 
@@ -78,3 +81,16 @@ and for the main text I have used [Bodoni Moda](https://fonts.google.com/specime
 I have chosen to use [Materialize](https://materializecss.com/) to create an overall structure for my website. 
 Materialize provides various elements of CSS and Javascript which is very helpful to keep a good structure on your page. 
 The reason why I choose Materiaize is mainly due to the various features they offer like a datepicker, floating action button etc. 
+
+## **Wireframes and Flowcharts**
+
+### **Wireframes**
+I used [Balsamic](https://balsamiq.com/wireframes/) to create wireframes for my website. 
+
+You can find my wireframes below:
+
+#### Desktop Wireframes
+* [Wireframes](wireframes/desktop.pdf)
+
+#### Mobile Wireframes
+* [Wireframes](wireframes/mobile.pdf)
