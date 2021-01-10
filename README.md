@@ -17,7 +17,8 @@ Happy Code! 👨‍💻 Happy days!
         * [Expectations](#expectations)
     * [Design Choices](#design-choices)
         * [Fonts](#fonts)
-
+        * [Structure](#structure)
+    
 ### **User Goals**
 
 * This web application has to work well on all kind of devices like mobile phones, tables and desktops.
@@ -33,7 +34,7 @@ Happy Code! 👨‍💻 Happy days!
 * As a user, I would like to be able to register for the web application so I can have my personal environment.
 * As a user, I want to login after I created an account and see my previous inserted information.
 * As a user, I want to be able to search recipes per cuisine.
-* As a user, I want a dashboard that shows the lasts recipes added.
+* As a user, I want a dashboard that shows the latest recipes added.
 * As a user, I want a dashboard that shows how many recipes per category.
 * As a user, I want to see the recipes without log in.
 * As a user, I want to write a review about a recipe.
@@ -67,7 +68,13 @@ Happy Code! 👨‍💻 Happy days!
 I made a research in [Jenn David Design](https://jenndavid.com/colors-that-influence-food-sales-infographic/ "jenndavid.com") website, where I found that a mix of red, orange and green would be a nice look for a web application that present recipes. Then I have used [Coolors](https://coolors.co/ "Coolors.co") to come up with a pallete of colors that I already had chosen.
 
 #### Fonts
+
 I have visited [Google Fonts](https://fonts.google.com/ "Google Fonts") in order to find appropriate fonts for my web application.
 For the titles and subtitles, I have used the font [Redressed](https://fonts.google.com/specimen/Redressed "Redressed") 
 and for the main text I have used [Bodoni Moda](https://fonts.google.com/specimen/Bodoni+Moda "Bodoni Moda"). 
 
+#### Structure
+
+I have chosen to use [Materialize](https://materializecss.com/) to create an overall structure for my website. 
+Materialize provides various elements of CSS and Javascript which is very helpful to keep a good structure on your page. 
+The reason why I choose Materiaize is mainly due to the various features they offer like a datepicker, floating action button etc. 
