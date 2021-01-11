@@ -27,6 +27,7 @@ Happy Code! 👨‍💻 Happy days!
     * [Features to be implemented](#features-to-be-implemented)
 * [Technologies used](#technologies-used)
     * [Languages](#languages)
+    * [Libraries and Frameworks](#libraries-and-frameworks)
     
 ### **User Goals**
 
@@ -174,3 +175,10 @@ name            | String
 * [CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
 * [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
 * [Python](https://www.python.org/)
+
+### **Libraries and Frameworks**
+
+* [Font Awesome](https://fontawesome.com/)
+* [Materialize](https://materializecss.com/)
+* [Google Fonts](https://fonts.google.com/)
+* [jQuery](https://jquery.com/)
