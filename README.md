@@ -101,4 +101,4 @@ You can find my wireframes below:
 I have decided to make a flowchart to completely understand each step of the process. 
 I have used [Draw.io](https://draw.io/) to make this flowchart which you can view below: 
 
-[Flowchart](wireframes/flowchart.png)
+* [Flowchart](wireframes/flowchart.png)
