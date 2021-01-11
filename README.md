@@ -122,3 +122,15 @@ name     | String
 email    | String
 password | String
 
+#### **Recipe**
+
+Key             | Value
+----------------|-----------
+_id             | ObjectId
+user_id         | String
+name            | String
+category        | String
+time            | String
+yield           | String
+ingredients     | String
+steps           | String
