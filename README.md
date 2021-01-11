@@ -122,7 +122,7 @@ name     | String
 email    | String
 password | String
 
-#### **Recipe**
+#### **Recipe:**
 
 Key             | Value
 ----------------|-----------
@@ -134,3 +134,10 @@ time            | String
 yield           | String
 ingredients     | String
 steps           | String
+
+#### **Category:**
+
+Key             | Value
+----------------|-----------
+_id             | ObjectId
+name            | String
