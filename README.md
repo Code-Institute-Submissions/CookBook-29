@@ -25,6 +25,8 @@ Happy Code! 👨‍💻 Happy days!
 * [Features](#features)🤖
     * [Existing Features](#existing-features)
     * [Features to be implemented](#features-to-be-implemented)
+* [Technologies used](#technologies-used)
+    * [Languages](#languages)
     
 ### **User Goals**
 
@@ -166,3 +168,9 @@ name            | String
 * Include a confirm password to make sure the user has chosen the password he/she wanted. 
 * Have a functionality to rate the recipes.
 
+### **Languages**
+
+* [HTML](https://en.wikipedia.org/wiki/HTML)
+* [CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+* [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+* [Python](https://www.python.org/)
