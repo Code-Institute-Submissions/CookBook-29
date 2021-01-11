@@ -25,9 +25,10 @@ Happy Code! 👨‍💻 Happy days!
 * [Features](#features)🤖
     * [Existing Features](#existing-features)
     * [Features to be implemented](#features-to-be-implemented)
-* [Technologies used](#technologies-used)
+* [Technologies used](#technologies-used)👀
     * [Languages](#languages)
     * [Libraries and Frameworks](#libraries-and-frameworks)
+    * [Tools](#tools)
     
 ### **User Goals**
 
@@ -169,6 +170,8 @@ name            | String
 * Include a confirm password to make sure the user has chosen the password he/she wanted. 
 * Have a functionality to rate the recipes.
 
+## **Technologies used**👀
+
 ### **Languages**
 
 * [HTML](https://en.wikipedia.org/wiki/HTML)
@@ -182,3 +185,14 @@ name            | String
 * [Materialize](https://materializecss.com/)
 * [Google Fonts](https://fonts.google.com/)
 * [jQuery](https://jquery.com/)
+
+### **Tools**
+* [Git](https://git-scm.com/)
+* [Heroku](https://www.heroku.com/)
+* [Balsamic](https://balsamiq.com/wireframes/)
+* [W3C HTML Validation Service](https://validator.w3.org/)
+* [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/)
+* [MongoDB Atlas](https://www.mongodb.com/)
+* [Flask](https://flask.palletsprojects.com/en/1.1.x/)
+* [PyMongo](https://api.mongodb.com/python/current/tutorial.html)
+* [Jinja](https://jinja.palletsprojects.com/en/2.11.x/)
