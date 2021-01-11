@@ -15,10 +15,10 @@ Happy Code! 👨‍💻 Happy days!
     * [User Requirements and Expectations](#user-requirements-and-expectations)
         * [Requirements](#requirements)
         * [Expectations](#expectations)
-    * [Design Choices](#design-choices)
+    * [Design Choices](#design-choices)🎨
         * [Fonts](#fonts)
         * [Structure](#structure)
-* [Wireframes and Flowcharts](#wireframes-and-flowcharts)
+* [Wireframes and Flowcharts](#wireframes-and-flowcharts)👨‍🔧
     * [Wireframes](#wireframes)
     * [Flowcharts](#flowcharts)
     * [Database Structure](#database-structure)
@@ -68,9 +68,11 @@ Happy Code! 👨‍💻 Happy days!
 * It should be easy to add another recipe.
 * It should be easy to add a review in a recipe.
 
-### **Design Choices**
+### **Design Choices**🎨
 
 I made a research in [Jenn David Design](https://jenndavid.com/colors-that-influence-food-sales-infographic/ "jenndavid.com") website, where I found that a mix of red, orange and green would be a nice look for a web application that present recipes. Then I have used [Coolors](https://coolors.co/ "Coolors.co") to come up with a pallete of colors that I already had chosen.
+
+![palette](https://github.com/alychinque/CookBook/blob/master/wireframes/palette.png)
 
 #### Fonts
 
@@ -84,7 +86,7 @@ I have chosen to use [Materialize](https://materializecss.com/) to create an ove
 Materialize provides various elements of CSS and Javascript which is very helpful to keep a good structure on your page. 
 The reason why I choose Materiaize is mainly due to the various features they offer like a datepicker, floating action button etc. 
 
-## **Wireframes and Flowcharts**
+## **Wireframes and Flowcharts**👨‍🔧
 
 ### **Wireframes**
 I used [Balsamic](https://balsamiq.com/wireframes/) to create wireframes for my website. 
