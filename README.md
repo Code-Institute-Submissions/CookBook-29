@@ -29,6 +29,11 @@ Happy Code! 👨‍💻 Happy days!
     * [Languages](#languages)
     * [Libraries and Frameworks](#libraries-and-frameworks)
     * [Tools](#tools)
+* [Testing](#testing)
+* [Deployment](#deployment)
+    * [Local Deployment](#local-deployment)
+    * [Heroku Deployment](#heroku-deployment)
+* [Credits](#credits)
     
 ### **User Goals**
 
@@ -196,3 +201,14 @@ name            | String
 * [Flask](https://flask.palletsprojects.com/en/1.1.x/)
 * [PyMongo](https://api.mongodb.com/python/current/tutorial.html)
 * [Jinja](https://jinja.palletsprojects.com/en/2.11.x/)
+
+## **Testing**
+### Coming soon👨‍🔧🛠
+
+
+## **Deployment**
+### Coming soon👨‍🔧🛠
+
+
+## **Credits**
+### Coming soon👨‍🔧🛠
