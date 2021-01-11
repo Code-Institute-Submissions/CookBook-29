@@ -111,5 +111,14 @@ I have used [Draw.io](https://draw.io/) to make this flowchart which you can vie
 I have created an database entities in [Draw.io](https://draw.io/)
 * [Database](wireframes/data.png)
 
+I also have used MongoDB to set up the database for this project with the following collections: 
 
+#### **Users:**
+
+Key      | Value
+---------|-----------
+_id      | ObjectId
+name     | String
+email    | String
+password | String
 
