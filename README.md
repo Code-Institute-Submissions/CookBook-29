@@ -22,6 +22,8 @@ Happy Code! 👨‍💻 Happy days!
     * [Wireframes](#wireframes)
     * [Flowcharts](#flowcharts)
     * [Database Structure](#database-structure)
+* [Features](#features)🤖
+    * [Existing Features](#existing-features)
 
     
 ### **User Goals**
@@ -141,3 +143,18 @@ Key             | Value
 ----------------|-----------
 _id             | ObjectId
 name            | String
+
+## **Features**🤖
+
+### **Existing Features**
+
+* Registration functionality
+* Sign-In and Out functionality
+* Add multiple recipes per user 
+* CRUD Functions:
+    * Create: possibility to add various recipes and reviews.
+    * Read: dashboard where you can view the recipes and its reviews.
+    * Update: possibility to update the recipes.
+    * Delete: possibility to delete the recipes.
+* Search recipes.
+
