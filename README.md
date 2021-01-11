@@ -24,7 +24,7 @@ Happy Code! 👨‍💻 Happy days!
     * [Database Structure](#database-structure)
 * [Features](#features)🤖
     * [Existing Features](#existing-features)
-
+    * [Features to be implemented](#features-to-be-implemented)
     
 ### **User Goals**
 
@@ -157,4 +157,12 @@ name            | String
     * Update: possibility to update the recipes.
     * Delete: possibility to delete the recipes.
 * Search recipes.
+
+### **Features to be implemented**
+
+* Have a fucionality to insert images within the recipes.
+* Have a more extensive user profile with, profile image, preferences and email to which you can send updates, newsletters etc.
+* Have a 'forget password' functionality.
+* Include a confirm password to make sure the user has chosen the password he/she wanted. 
+* Have a functionality to rate the recipes.
 
