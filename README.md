@@ -21,6 +21,7 @@ Happy Code! 👨‍💻 Happy days!
 * [Wireframes and Flowcharts](#wireframes-and-flowcharts)
     * [Wireframes](#wireframes)
     * [Flowcharts](#flowcharts)
+    * [Database Structure](#database-structure)
 
     
 ### **User Goals**
@@ -101,4 +102,12 @@ You can find my wireframes below:
 I have decided to make a flowchart to completely understand each step of the process. 
 I have used [Draw.io](https://draw.io/) to make this flowchart which you can view below: 
 
-* [Flowchart](wireframes/flowchart.png)
+* [Flowchart](wireframes/flowchart.pdf)
+
+### **Database Structure**
+
+I have created an database entities in [Draw.io](https://draw.io/)
+* [Database](wireframes/data.png)
+
+
+
