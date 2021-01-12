@@ -12,6 +12,37 @@
     <title>CookBook</title>
 </head>
 <body>
+
+    <header>
+        <nav class="navbar text-shadow">
+            <div class="nav-wrapper">
+              <a href="{{ url_for('home') }}" class="brand-logo">CookBook</a>
+              <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
+              <ul class="right hide-on-med-and-down">
+                <li><a href="">Home</a></li>
+                <li><a href="">Sign In</a></li>
+                <li><a href="">Sing up</a></li>
+                <li><a href="">Recipes</a></li>
+                <li><a href="">My Recipes</a></li>
+                <li><a href="">Add Recipe</a></li>
+                <li><a href="">Logout</a></li>                
+              </ul>
+            </div>
+          </nav>
+        
+          <ul class="sidenav" id="mobile-demo">
+            <li>
+                <h4 class="center-align">CookBook</h4>
+            </li>
+            <li><a href="">Home</a></li>
+                <li><a href="">Sign In</a></li>
+                <li><a href="">Sing up</a></li>
+                <li><a href="">Recipes</a></li>
+                <li><a href="">My Recipes</a></li>
+                <li><a href="">Add Recipe</a></li>
+                <li><a href="">Logout</a></li>  
+          </ul>        
+    </header>
     {% block content %}
     {% endblock %}
     
