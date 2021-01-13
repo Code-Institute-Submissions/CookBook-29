@@ -53,6 +53,31 @@ def signin():
 
     return render_template('signin.html')
 
+@app.route("/signup", methods=['GET', 'POST'])
+def signup():
+    if request.method == 'POST':
+        # check if email already exists in db
+        existing_email = mongo.db.users.find_one(
+            {'email' : request.form.get('email').lower()})
+
+        if existing_email:
+            flash('Email already used')
+            return redirect(url_for('signup'))
+
+        register = {
+            'name': request.form.get('name').lower(),
+            'email': request.form.get('email').lower(),
+            'password': generate_password_hash(request.form.get('password'))
+        }
+        mongo.db.users.insert_one(register)
+
+        # put the new user into 'session' cookie
+        session['user'] = request.form.get('name').lower()
+        flash('Registration Successful')
+        return redirect(url_for('myRecipes', name=session['user']))
+
+    return render_template('signup.html')
+
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

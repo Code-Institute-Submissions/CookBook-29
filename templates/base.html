@@ -29,7 +29,7 @@
                     <li><a href="">Logout</a></li>
                     {% else %}
                     <li><a href="{{ url_for('signin') }}">Sign In</a></li>
-                    <li><a href="">Sing up</a></li>
+                    <li><a href="{{ url_for('signup') }}">Sing up</a></li>
                     {% endif %}
                 </ul>
             </div>
