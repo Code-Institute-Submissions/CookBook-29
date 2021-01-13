@@ -28,23 +28,23 @@ def home():
 @app.route('/signin', methods=['GET', 'POST'])
 def signin():
     if request.method == 'POST':
-        # check if username already exists in db
-        existing_user = mongo.db.users.find_one(
-            {'name' : request.form.get('name').lower()})
+        # check if email already exists in db
+        existing_email = mongo.db.users.find_one(
+            {'email' : request.form.get('email').lower()})
 
-        if existing_user:
+        if existing_email:
             # ensure hashed password matches user input
             if check_password_hash(
-                existing_user['password'], request.form.get('password')):
-                    session['user'] = request.form.get('name').lower()
+                existing_email['password'], request.form.get('password')):
+                    session['userEmail'] = existing_email['email'].lower()
                     flash('Welcome {}'.format(
-                        request.form.get('name').capitalize()))
-                    return redirect(url_for('myRecipes', username=session['user']))
+                        existing_email['name'].capitalize()))
+                    return redirect(url_for('myRecipes', email=session['userEmail']))
 
             else:
                 #invalid password match
                 flash('Incorrect Username and/or Password')
-                return redirect(url_for('sign'))
+                return redirect(url_for('signin'))
 
         else:
             #username doesn't exist
@@ -77,6 +77,18 @@ def signup():
         return redirect(url_for('myRecipes', name=session['user']))
 
     return render_template('signup.html')
+
+
+@app.route('/myrecipes/<email>', methods=['GET', 'POST'])
+def myRecipes(email):
+    # grab the session user's name and email from db
+    name = mongo.db.users.find_one(
+        {'email': session['userEmail']})['name']
+
+    if session['userEmail']:
+        return render_template('myrecipes.html', name=name)
+
+    return redirect(url_for('signin'))
 
 
 if __name__ == '__main__':

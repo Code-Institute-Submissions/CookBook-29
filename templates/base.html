@@ -23,13 +23,13 @@
                 <ul class="hide-on-med-and-down">
                     <li><a href="">Home</a></li>
                     <li><a href="">Recipes</a></li>
-                    {% if session.user %}
-                    <li><a href="">My Recipes</a></li>
-                    <li><a href="">Add Recipe</a></li>
-                    <li><a href="">Logout</a></li>
+                    {% if session %}
+                        <li><a href="">My Recipes</a></li>
+                        <li><a href="">Add Recipe</a></li>
+                        <li><a href="">Logout</a></li>
                     {% else %}
-                    <li><a href="{{ url_for('signin') }}">Sign In</a></li>
-                    <li><a href="{{ url_for('signup') }}">Sing up</a></li>
+                        <li><a href="{{ url_for('signin') }}">Sign In</a></li>
+                        <li><a href="{{ url_for('signup') }}">Sing up</a></li>
                     {% endif %}
                 </ul>
             </div>
