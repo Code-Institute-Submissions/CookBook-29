@@ -29,17 +29,17 @@ def home():
 def signin():
     if request.method == 'POST':
         # check if email already exists in db
-        existing_email = mongo.db.users.find_one(
+        existing_user = mongo.db.users.find_one(
             {'email' : request.form.get('email').lower()})
 
-        if existing_email:
+        if existing_user:
             # ensure hashed password matches user input
             if check_password_hash(
-                existing_email['password'], request.form.get('password')):
-                    session['userEmail'] = existing_email['email'].lower()
+                existing_user['password'], request.form.get('password')):
+                    session['user'] = existing_user['name'].lower()
                     flash('Welcome {}'.format(
-                        existing_email['name'].capitalize()))
-                    return redirect(url_for('myRecipes', email=session['userEmail']))
+                        existing_user['name'].capitalize()))
+                    return redirect(url_for('myRecipes', name=session['user']))
 
             else:
                 #invalid password match
@@ -53,14 +53,15 @@ def signin():
 
     return render_template('signin.html')
 
+
 @app.route("/signup", methods=['GET', 'POST'])
 def signup():
     if request.method == 'POST':
         # check if email already exists in db
-        existing_email = mongo.db.users.find_one(
+        existing_user = mongo.db.users.find_one(
             {'email' : request.form.get('email').lower()})
 
-        if existing_email:
+        if existing_user:
             flash('Email already used')
             return redirect(url_for('signup'))
 
@@ -79,13 +80,14 @@ def signup():
     return render_template('signup.html')
 
 
-@app.route('/myrecipes/<email>', methods=['GET', 'POST'])
-def myRecipes(email):
+@app.route('/myrecipes/<name>', methods=['GET', 'POST'])
+def myRecipes(name):
     # grab the session user's name and email from db
     name = mongo.db.users.find_one(
-        {'email': session['userEmail']})['name']
+        {'name': session['user']})['name']
+    print('\n\n\n\nEste e o nome: '+name)
 
-    if session['userEmail']:
+    if session['user']:
         return render_template('myrecipes.html', name=name)
 
     return redirect(url_for('signin'))
@@ -95,7 +97,7 @@ def myRecipes(email):
 def logout():
     # remove user from session cookies
     flash('You have been logged out')
-    session.pop('userEmail')
+    session.pop('user')
     return redirect(url_for('signin'))
 
 

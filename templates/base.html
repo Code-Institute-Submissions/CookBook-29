@@ -21,9 +21,9 @@
                 <a href="{{ url_for('home') }}" class="brand-logo right">CookBook</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
                 <ul class="hide-on-med-and-down">
-                    <li><a href="">Home</a></li>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
                     <li><a href="">Recipes</a></li>
-                    {% if session.userEmail %}
+                    {% if session.user %}
                         <li><a href="">My Recipes</a></li>
                         <li><a href="">Add Recipe</a></li>
                         <li><a href="{{ url_for('logout') }}">Logout</a></li>
