@@ -91,6 +91,14 @@ def myRecipes(email):
     return redirect(url_for('signin'))
 
 
+@app.route('/logout')
+def logout():
+    # remove user from session cookies
+    flash('You have been logged out')
+    session.pop('userEmail')
+    return redirect(url_for('signin'))
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
