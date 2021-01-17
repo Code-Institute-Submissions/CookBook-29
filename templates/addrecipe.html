@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="row">
+        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('addRecipe') }}">
+            <div class="card-panel">
+                <!-- name of recipe -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-envelope prefix"></i>
+                        <input id="recipe" name="recipe" type="text" class="validate" required>
+                        <label for="recipe">Name Recipe:</label>
+                    </div>
+                </div>
+                <!-- category -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-key prefix"></i>
+                        <input id="category" name="category" type="text" class="validate" required>
+                        <label for="category">Category</label>
+                    </div>
+                </div>
+                 <!-- time -->
+                 <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-time prefix"></i>
+                        <input id="time" name="time" type="text" class="validate" required>
+                        <label for="time">Time</label>
+                    </div>
+                </div>
+                 <!-- Yield -->
+                 <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-key prefix"></i>
+                        <input id="yield" name="yield" type="number" class="validate" required>
+                        <label for="yield">Yield</label>
+                    </div>
+                </div>
+                 <!-- ingredients -->
+                 <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-key prefix"></i>
+                        <input id="ingredients" name="ingredients" type="text" class="validate" required>
+                        <label for="ingredients">Ingredients</label>
+                    </div>
+                </div>
+                 <!-- Steps -->
+                 <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-key prefix"></i>
+                        <input id="steps" name="steps" type="text" class="validate" required>
+                        <label for="steps">Steps</label>
+                    </div>
+                </div>
+                <!-- Add -->
+                <div class="row">
+                    <button type="submit" class="col s12 btn-large text-shadow">
+                        Add <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+            
+
+{% endblock %}
