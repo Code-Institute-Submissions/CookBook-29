@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% include 'layout/head.html' %}
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar text-shadow">
+            <div class="nav-wrapper">
+                <a href="{{ url_for('home') }}" class="brand-logo right">CookBook</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+                <ul class="hide-on-med-and-down">
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="">Recipes</a></li>
+                    {% if session.user %}
+                        <li><a href="{{ url_for('myRecipes', email=session['user']) }}">My Recipes</a></li>
+                        <li><a href="{{ url_for('addRecipe') }}">Add Recipe</a></li>
+                        <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                    {% else %}
+                        <li><a href="{{ url_for('signin') }}">Sign In</a></li>
+                        <li><a href="{{ url_for('signup') }}">Sing up</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+
+        <ul class="sidenav" id="mobile-demo">
+            <li>
+                <h4 class="center-align">CookBook</h4>
+            </li>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="">Recipes</a></li>
+            {% if session.user %}
+                <li><a href="{{ url_for('myRecipes', email=session['user']) }}">My Recipes</a></li>
+                <li><a href="{{ url_for('addRecipe') }}">Add Recipe</a></li>
+                <li><a href="{{ url_for('logout') }}">Logout</a></li>
+            {% else %}
+                <li><a href="{{ url_for('signin') }}">Sign In</a></li>
+                <li><a href="{{ url_for('signup') }}">Sing up</a></li>
+            {% endif %}
+        </ul>
+    </header>
+    <div class="main container">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <div class="footer">
+        <div class="container right">
+            <span class="footer-text right">
+                Created by Alysson Chinque
+                <a class="icon" href="#!"><i class="fab fa-github"></i></a>
+                <a class="icon" href="#!"><i class="fab fa-linkedin"></i></a>
+            </span>
+        </div>
+    </div>
+    {% include 'layout/scripts.html' %}
+</body>
+
+</html>
