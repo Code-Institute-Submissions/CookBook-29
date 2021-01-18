@@ -114,11 +114,16 @@ def addRecipe():
             "steps": request.form.get("steps")
         }
         mongo.db.recipes.insert_one(recipe)
-        print("Recipe Successfully Added")
         flash("Recipe Successfully Added")
         return redirect(url_for("myRecipes", user_id=session['user_id']))
 
     return render_template("pages/addrecipe.html", user_id=session['user_id'])
+
+
+@app.route('/recipe/', methods=['GET', 'POST'])
+def recipes():
+    recipes = mongo.db.recipes.find()
+    return render_template('pages/recipes.html', recipes=recipes)
 
 
 if __name__ == '__main__':
