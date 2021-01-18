@@ -126,6 +126,25 @@ def recipes():
     return render_template('pages/recipes.html', recipes=recipes)
 
 
+@app.route('/editrecipe/<recipe_id>')
+def editRecipe(recipe_id):
+    if request.method == "POST":
+        recipe = {
+            "user_id": session['user_id'],
+            "name_recipe": request.form.get("recipe"),
+            "category": request.form.get("category"),
+            "time":request.form.get("time"),
+            "yield": request.form.get("yield"),
+            "ingredients": request.form.get("ingredients"),
+            "steps": request.form.get("steps")
+        }
+        mongo.db.recipes.update({'_id': ObjectId(recipe_id)}, recipe)
+        flash("Recipe Successfully Updated")
+
+    recipe_id = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
+    return render_template('pages/editrecipe.html', recipe_id=recipe_id)
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
