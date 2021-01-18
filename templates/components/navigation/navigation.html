@@ -5,7 +5,7 @@
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
             <ul class="hide-on-med-and-down">
                 <li><a href="{{ url_for('home') }}">Home</a></li>
-                <li><a href="">Recipes</a></li>
+                <li><a href="{{ url_for('recipes') }}">Recipes</a></li>
                 {% if session['user_id'] %}
                     <li><a href="{{ url_for('myRecipes', user_id=session['user_id']) }}">My Recipes</a></li>
                     <li><a href="{{ url_for('addRecipe') }}">Add Recipe</a></li>
@@ -23,7 +23,7 @@
             <h4 class="center-align">CookBook</h4>
         </li>
         <li><a href="{{ url_for('home') }}">Home</a></li>
-        <li><a href="">Recipes</a></li>
+        <li><a href="{{ url_for('recipes') }}">Recipes</a></li>
         {% if session['user_id'] %}
             <li><a href="{{ url_for('myRecipes',user_id=session['user_id']) }}">My Recipes</a></li>
             <li><a href="{{ url_for('addRecipe') }}">Add Recipe</a></li>
