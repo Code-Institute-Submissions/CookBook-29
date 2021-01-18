@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'layout/base.html' %}
 
 {% block content %}
 
@@ -8,7 +8,7 @@
         <div class="col s12 m8 offset-m2">
             <div class="card-panel">
                 <h3 class="center-align">
-                    User's email: {{ email }} 
+                    {{ name|capitalize }}'s profile 
                 </h3>
             </div>
         </div>
