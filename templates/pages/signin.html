@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
+
 {% block content %}
+
+{% include 'components/navigation/navigation.html' %}
 
 <h3 class="center-align">Sign In</h3>
 
@@ -42,5 +45,7 @@
         </p>
     </div>
 </div>
+
+{% include 'components/footer/footer.html' %}
 
 {% endblock %}

@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
+
 {% block content %}
+
+{% include 'components/navigation/navigation.html' %}
 
     <div class="row">
         <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('addRecipe') }}">
@@ -61,6 +64,7 @@
             </div>
         </form>
     </div>
-            
+
+{% include 'components/footer/footer.html' %}
 
 {% endblock %}
