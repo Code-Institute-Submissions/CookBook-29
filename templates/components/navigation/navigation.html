@@ -6,8 +6,8 @@
             <ul class="hide-on-med-and-down">
                 <li><a href="{{ url_for('home') }}">Home</a></li>
                 <li><a href="">Recipes</a></li>
-                {% if session.user %}
-                    <li><a href="{{ url_for('myRecipes', email=session['user']) }}">My Recipes</a></li>
+                {% if session['user_id'] %}
+                    <li><a href="{{ url_for('myRecipes', user_id=session['user_id']) }}">My Recipes</a></li>
                     <li><a href="{{ url_for('addRecipe') }}">Add Recipe</a></li>
                     <li><a href="{{ url_for('logout') }}">Logout</a></li>
                 {% else %}
@@ -24,8 +24,8 @@
         </li>
         <li><a href="{{ url_for('home') }}">Home</a></li>
         <li><a href="">Recipes</a></li>
-        {% if session.user %}
-            <li><a href="{{ url_for('myRecipes', email=session['user']) }}">My Recipes</a></li>
+        {% if session['user_id'] %}
+            <li><a href="{{ url_for('myRecipes',user_id=session['user_id']) }}">My Recipes</a></li>
             <li><a href="{{ url_for('addRecipe') }}">Add Recipe</a></li>
             <li><a href="{{ url_for('logout') }}">Logout</a></li>
         {% else %}
