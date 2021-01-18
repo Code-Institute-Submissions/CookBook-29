@@ -14,18 +14,23 @@
         </div>
     </div>
     
-    {% for recipe in recipes %}
-        <div class="box-recipe">
-            <p>{{ recipe.name_recipe }}</p> <br>
-            <p>{{ recipe.category }}</p> <br>
-            <p>{{ recipe.time }}</p> <br>
-            <p>{{ recipe.yield }}</p> <br>
-            <p>{{ recipe.ingredients }}</p> <br>
-            <p>{{ recipe.steps }}</p><br><br>
-            <hr>
-        </div>
-    {% endfor %}
-    
+    <ul class="collapsible">
+        {% for recipe in recipes %}
+        <li>
+            <div class="collapsible-header white-text teal lighten-1 text-shadow">
+                <i class="fas fa-caret-down"></i>
+                <h5><strong>{{ recipe.name_recipe }} : {{ recipe.yield }} Portions</strong></h5>
+            </div>
+            <div class="collapsible-body">
+                <h6><strong>{{ recipe.category }}</strong></h6>
+                <div class="right-align"><i class="fas fa-clock prefix"></i> Time: {{ recipe.time }}</div>
+                <p>{{ recipe.ingredients }}</p>
+                <hr>
+                <p>{{ recipe.steps }}</p>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
 {% include 'components/footer/footer.html' %}        
 
 {% endblock %}
