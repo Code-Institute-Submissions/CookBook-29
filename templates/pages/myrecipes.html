@@ -28,7 +28,7 @@
                 <a href="{{ url_for('editRecipe', user_id=session['user_id'], recipe_id=recipe._id) }}" class="btn-small light-blue lighten-1">
                     Edit Recipe <i class="fas fa-plus-square right"></i>
                 </a>
-                <a href="" class="btn-small red text-shadow">
+                <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn-small red text-shadow">
                     Delete Recipe <i class="fas fa-plus-square right"></i>
                 </a>
             </div>
