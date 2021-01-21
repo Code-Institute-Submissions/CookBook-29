@@ -129,6 +129,7 @@ def addRecipe(user_id):
 
 @app.route('/recipe/edit/<user_id>/<recipe_id>', methods=['GET', 'POST'])
 def editRecipe(user_id, recipe_id):
+    user = mongo.db.users.find_one({'_id': ObjectId(user_id)})
     if request.method == "POST":
         submit = {
             "user_id":  user_id,
