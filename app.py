@@ -117,7 +117,8 @@ def addRecipe(user_id):
             "yield": request.form.get("yield"),
             "ingredients": request.form.get("ingredients"),
             "steps": request.form.get("steps"),
-            "created_by": user['name']
+            "created_by": user['name'],
+            "recipe_image": request.form.get('recipe_image')
         }
         mongo.db.recipes.insert_one(recipe)
         flash("Recipe Successfully Added")
@@ -136,7 +137,9 @@ def editRecipe(user_id, recipe_id):
             "time":request.form.get("time"),
             "yield": request.form.get("yield"),
             "ingredients": request.form.get("ingredients"),
-            "steps": request.form.get("steps")
+            "steps": request.form.get("steps"),
+            "created_by": user['name'],
+            "recipe_image": request.form.get('recipe_image')
         }
         mongo.db.recipes.update({'_id': ObjectId(recipe_id)}, submit)
         flash("Recipe Successfully Updated")
@@ -146,6 +149,12 @@ def editRecipe(user_id, recipe_id):
     return render_template('pages/recipe.html', 
                             user_id=session['user_id'],    
                             recipe=recipe)
+
+
+@app.route('/recipe_details/<recipe_id>')
+def recipe_details(user_id, recipe_id):
+    recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
+    return render_template('recipe_details.html', recipe=recipe, user_id=session['user_id'])
 
 
 if __name__ == '__main__':
