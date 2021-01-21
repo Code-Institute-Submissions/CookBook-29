@@ -5,6 +5,7 @@
     <div class="container center-align" id="register">
         <h2 class="heading">Register here!</h2>
         <div class="row">
+            {% include 'components/flash/flash_message.html' %}
             {% include 'components/forms/authentication.html' %}
         </div>
     </div>
@@ -12,6 +13,7 @@
     <div class="container center-align" id="sign-in">
         <h2 class="heading">Sign in to your account</h2>
         <div class="row">
+            {% include 'components/flash/flash_message.html' %}
             {% include 'components/forms/authentication.html' %}
         </div>
     </div>
