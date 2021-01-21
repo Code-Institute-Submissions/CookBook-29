@@ -1,7 +1,7 @@
 {% if register == true %}
-    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('signup') }}">
+    <form class="col s12 m6 offset-m3" method="POST" action="{{ url_for('signup') }}">
 {% else %}
-    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('signin') }}">
+    <form class="col s12 m6 offset-m3" method="POST" action="{{ url_for('signin') }}">
 {% endif %}
     <div class="card-panel">
         {% if register == True %}
