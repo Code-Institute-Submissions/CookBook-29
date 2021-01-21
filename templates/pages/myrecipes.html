@@ -18,8 +18,16 @@
         {% for recipe in recipes %}
         <li>
             <div class="collapsible-header white-text teal lighten-1 text-shadow">
-                <i class="fas fa-caret-down"></i>
-                <h5><strong>{{ recipe.name_recipe }} : {{ recipe.yield }} Portions</strong></h5>
+                <div class="col s2">
+                    <a href="{{ url_for('editRecipe', recipe_id=recipe._id) }}" class="btn-small light-blue lighten-1">Edit</a>
+                    <a href="" class="btn-small red">Delete</a>
+                </div>
+                <div class="col s8">
+                    <h5><strong> <i class="fas fa-caret-down"></i> {{ recipe.name_recipe }} : {{ recipe.yield }} Portions</strong></h5>
+                </div>
+                <!-- <div class="col s2 right-align">
+                    <a href="" class="btn-small red">Delete</a>
+                </div> -->
             </div>
             <div class="collapsible-body">
                 <h6><strong>{{ recipe.category }}</strong></h6>
