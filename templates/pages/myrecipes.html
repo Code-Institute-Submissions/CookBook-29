@@ -14,32 +14,28 @@
     </div>
     {% include 'components/flash/flash_message.html' %}
     
-    <ul class="collapsible">
+    <div class="row">
         {% for recipe in recipes %}
-        <li>
-            <div class="collapsible-header white-text teal lighten-1 text-shadow">
-                <div class="col s2">
-                    <a href="{{ url_for('editRecipe', user_id=session['user_id'], recipe_id=recipe._id) }}" class="btn-small light-blue lighten-1">Edit</a>
-                    <a href="" class="btn-small red">Delete</a>
-                </div>
-                <div class="col s8">
-                    <h5><strong> <i class="fas fa-caret-down"></i> {{ recipe.name_recipe }} : {{ recipe.yield }} Portions</strong></h5>
-                </div>
-                <!-- <div class="col s2 right-align">
-                    <a href="" class="btn-small red">Delete</a>
-                </div> -->
-            </div>
-            <div class="collapsible-body">
-                <h6><strong>{{ recipe.category }}</strong></h6>
+        <div class="col s12 m6 card-panel">
+            <img class="col s12" src="{{ recipe.recipe_image }}">
+            <h3 class="card-title"><strong>{{ recipe.name_recipe }}</strong></h3>
+            <div class="card-content">
+                <h6><strong>Category: {{ recipe.category }}</strong></h6>
                 <div class="right-align"><i class="fas fa-clock prefix"></i> Time: {{ recipe.time }}</div>
-                <p>{{ recipe.ingredients }}</p>
-                <hr>
-                <p>{{ recipe.steps }}</p>
                 <strong><em>Created by: {{ recipe.created_by }}</em></strong>
             </div>
-        </li>
+            <div class="card-action">
+                <a href="{{ url_for('editRecipe', user_id=session['user_id'], recipe_id=recipe._id) }}" class="btn-small light-blue lighten-1">
+                    Edit Recipe <i class="fas fa-plus-square right"></i>
+                </a>
+                <a href="" class="btn-small red text-shadow">
+                    Delete Recipe <i class="fas fa-plus-square right"></i>
+                </a>
+            </div>
+        </div>
         {% endfor %}
-    </ul>
+    </div>
+    
 {% include 'components/footer/footer.html' %}        
 
 {% endblock %}

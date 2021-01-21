@@ -1,26 +1,28 @@
 {% extends 'layout/base.html' %}
-
 {% block content %}
-
 {% include 'components/navigation/navigation.html' %}
 
-    <ul class="collapsible">
+    
+    <h3 class="center-align">Recipes</h3>
+
+    <div class="row">
         {% for recipe in recipes %}
-        <li>
-            <div class="collapsible-header white-text teal lighten-1 text-shadow">
-                <i class="fas fa-caret-down"></i>
-                <h5><strong>{{ recipe.name_recipe }} : {{ recipe.yield }} Portions</strong></h5>
-            </div>
-            <div class="collapsible-body">
-                <h6><strong>{{ recipe.category }}</strong></h6>
+        <div class="col s12 m6 card-panel">
+            <img class="col s12" src="{{ recipe.recipe_image }}">
+            <h3 class="card-title"><strong>{{ recipe.name_recipe }}</strong></h3>
+            <div class="card-content">
+                <h6><strong>Category: {{ recipe.category }}</strong></h6>
                 <div class="right-align"><i class="fas fa-clock prefix"></i> Time: {{ recipe.time }}</div>
-                <p>{{ recipe.ingredients }}</p>
-                <hr>
-                <p>{{ recipe.steps }}</p>
+                <strong><em>Created by: {{ recipe.created_by }}</em></strong>
             </div>
-        </li>
+            <div class="card-action">
+                <a href="{{ url_for('recipe_details', user_id=session['user_id'], recipe_id=recipe._id) }}" class="btn-small teal lighten-1">
+                    See the Recipe <i class="fas fa-plus-square right"></i>
+                </a>
+            </div>
+        </div>
         {% endfor %}
-    </ul>
+    </div>
     
 {% include 'components/footer/footer.html' %}        
 
