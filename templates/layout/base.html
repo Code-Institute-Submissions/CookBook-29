@@ -1,19 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     {% include 'layout/head.html' %}
 </head>
-
 <body>
-
-    <div class="main container">
-        {% block content %}
-        {% endblock %}
-    </div>
-    
+    {% block content %}
+    {% endblock %}
     {% include 'layout/scripts.html' %}
-
 </body>
-
 </html>
