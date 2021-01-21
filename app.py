@@ -24,6 +24,12 @@ def home():
     return render_template('pages/home.html', recipes=recipes)
 
 
+@app.route('/recipes/', methods=['GET', 'POST'])
+def recipes():
+    recipes = mongo.db.recipes.find()
+    return render_template('pages/recipes.html', recipes=recipes)
+
+
 @app.route('/signin', methods=['GET', 'POST'])
 def signin():
     if request.method == "POST":
@@ -52,10 +58,10 @@ def signin():
 def signup():
     if request.method == 'POST':
         # check if email already exists in db
-        user = mongo.db.users.find_one(
+        user_email = mongo.db.users.find_one(
             {'email': request.form.get('email').lower()})
 
-        if user:
+        if user_email:
             flash('Email already used')
             return redirect(url_for('signup'))
 
@@ -65,27 +71,25 @@ def signup():
             'password': generate_password_hash(request.form.get('password'))
         }
         mongo.db.users.insert_one(register)
-        if mongo.db.users.find_one({'email': user}) is not None:
+        if mongo.db.users.find_one({'email': user_email}) is not None:
+            user = mongo.db.users.find_one({'email': user_email})
             user_id = str(user['_id'])
             session['user_id'] = str(user_id)
-            flash('Registration Successful')
+            flash('Registration Successful') 
             return redirect(url_for('myRecipes', user_id=user_id))
 
     return render_template('pages/checkuser.html', register=True)
 
 
 
-@app.route('/myrecipes/<user_id>', methods=['GET', 'POST'])
+@app.route('/myrecipe/<user_id>', methods=['GET', 'POST'])
 def myRecipes(user_id):
     # grab the session user's name and email from db
     if session['user_id']:
         user = mongo.db.users.find_one({'_id': ObjectId(user_id)})
         recipes = mongo.db.recipes.find({'user_id': user_id})
-        if recipes:
-            name = user['name']
-            count_recipes = recipes.count()
-
-        return render_template('pages/myrecipes.html', name=name, recipes=recipes, count_recipes=count_recipes)
+        name = user['name']
+        return render_template('pages/myrecipes.html', name=name, recipes=recipes)
 
     return redirect(url_for('pages/signin'))
 
@@ -101,8 +105,8 @@ def logout():
     return redirect(url_for('signin'))
 
 
-@app.route('/addrecipe/', methods=["GET", "POST"])
-def addRecipe():
+@app.route('/recipe/add/<user_id>', methods=["GET", "POST"])
+def addRecipe(user_id):
     if request.method == "POST":
         recipe = {
             "user_id": session['user_id'],
@@ -117,20 +121,14 @@ def addRecipe():
         flash("Recipe Successfully Added")
         return redirect(url_for("myRecipes", user_id=session['user_id']))
 
-    return render_template("pages/addrecipe.html", user_id=session['user_id'])
+    return render_template("pages/recipe.html", user_id=session['user_id'], add=True )
 
 
-@app.route('/recipe/', methods=['GET', 'POST'])
-def recipes():
-    recipes = mongo.db.recipes.find()
-    return render_template('pages/recipes.html', recipes=recipes)
-
-
-@app.route('/editrecipe/<recipe_id>')
-def editRecipe(recipe_id):
+@app.route('/editrecipe/<recipe_id>', methods=['GET', 'POST'])
+def editRecipe(user_id, recipe_id):
     if request.method == "POST":
-        recipe = {
-            "user_id": session['user_id'],
+        submit = {
+            "user_id": mongo.db.users.find_one({"_id": ObjectId(user_id)}),
             "name_recipe": request.form.get("recipe"),
             "category": request.form.get("category"),
             "time":request.form.get("time"),
@@ -138,11 +136,12 @@ def editRecipe(recipe_id):
             "ingredients": request.form.get("ingredients"),
             "steps": request.form.get("steps")
         }
-        mongo.db.recipes.update({'_id': ObjectId(recipe_id)}, recipe)
+        mongo.db.recipes.update({'_id': ObjectId(recipe_id)}, submit)
         flash("Recipe Successfully Updated")
+        return redirect(url_for('pages/recipes.html'))
 
-    recipe_id = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
-    return render_template('pages/editrecipe.html', recipe_id=recipe_id)
+    recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
+    return render_template('pages/editrecipe.html', user_id=session['user_id'], recipe=recipe)
 
 
 if __name__ == '__main__':
