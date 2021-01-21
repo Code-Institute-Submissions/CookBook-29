@@ -9,12 +9,8 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-cheese prefix"></i>
-                    {% if add == True %}
-                        <input id="recipe" name="recipe" type="text" class="validate" required>
-                    {% else %}
-                        <input id="recipe" name="recipe" type="text" class="validate" required
-                            value="{{ recipe.name_recipe }}">
-                    {% endif %}
+                    <input id="recipe" name="recipe" type="text" class="validate" required
+                        {% if add != True %} value="{{ recipe.name_recipe }}" {% endif %}>
                     <label for="recipe">Name Recipe</label>
                 </div>
             </div>
@@ -22,12 +18,8 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fab fa-buffer prefix"></i>
-                    {% if add == True %}
-                        <input id="category" name="category" type="text" class="validate" required>
-                    {% else %}
-                        <input id="category" name="category" type="text" class="validate" required
-                            value="{{ recipe.category }}">
-                    {% endif %}
+                    <input id="category" name="category" type="text" class="validate" required
+                        {% if add != True %} value="{{ recipe.category }}" {% endif %}>
                     <label for="category">Category</label>
                 </div>
             </div>
@@ -35,12 +27,8 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-clock prefix"></i>
-                    {% if add == True %}
-                        <input id="time" name="time" type="text" class="validate" required>
-                    {% else %}
-                        <input id="time" name="time" type="text" class="validate" required
-                            value="{{ recipe.time }}">
-                    {% endif %}
+                    <input id="time" name="time" type="text" class="validate" required
+                        {% if add != True %} value="{{ recipe.time }}" {% endif %}>
                     <label for="time">Time</label>
                 </div>
             </div>
@@ -48,12 +36,8 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-dice-six prefix"></i>
-                    {% if add == True %}
-                        <input id="yield" name="yield" type="number" class="validate" required>
-                    {% else %}
-                        <input id="yield" name="yield" type="number" class="validate" required
-                            value="{{ recipe.yield }}">
-                    {% endif %}
+                    <input id="yield" name="yield" type="number" class="validate" required
+                        {% if add != True %} value="{{ recipe.yield }}" {% endif %}>
                     <label for="yield">Yield</label>
                 </div>
             </div>
@@ -61,12 +45,8 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="far fa-sticky-note prefix"></i>
-                    {% if add == True %}
-                        <input id="ingredients" name="ingredients" type="text" class="validate" required>  
-                    {% else %}
-                        <input id="ingredients" name="ingredients" type="text" class="validate" required
-                            value="{{ recipe.ingredients }}">
-                    {% endif %}
+                    <input id="ingredients" name="ingredients" type="text" class="validate" required
+                        {% if add != True %} value="{{ recipe.ingredients }}" {% endif %}>
                     <label for="ingredients">Ingredients</label>
                 </div>
             </div>
@@ -74,13 +54,11 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-shoe-prints prefix"></i>
-                    {% if add == True %}
-                        <textarea id="steps" name="steps" type="text" class="validate" required></textarea>
-                    {% else %}
-                        <textarea id="steps" name="steps" type="text" class="validate" required>
+                    <textarea id="steps" name="steps" type="text" class="validate" required>
+                        {% if add != True %} 
                             {{- recipe.steps -}}
-                        </textarea>
-                    {% endif %}
+                        {% endif %}
+                    </textarea>
                     <label for="steps">Steps</label>
                 </div>
             </div>
