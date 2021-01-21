@@ -1,0 +1,105 @@
+{% if add == True %}
+    <form method="POST" action="{{ url_for('addRecipe', user_id=session['user_id']) }}" class="col s12 m8 offset-m2">
+{% else %}
+    <form action="{{ url_for('editRecipe', user_id=session['user_id'], recipe_id=recipe._id) }}" method="POST" class="col s12 m8 offset-m2">
+{% endif %}        
+            
+        <div class="card-panel">
+            <!-- name of recipe -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-cheese prefix"></i>
+                    {% if add == True %}
+                        <input id="recipe" name="recipe" type="text" class="validate" required>
+                    {% else %}
+                        <input id="recipe" name="recipe" type="text" class="validate" required
+                            value="{{ recipe.name_recipe }}">
+                    {% endif %}
+                    <label for="recipe">Name Recipe</label>
+                </div>
+            </div>
+            <!-- category -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fab fa-buffer prefix"></i>
+                    {% if add == True %}
+                        <input id="category" name="category" type="text" class="validate" required>
+                    {% else %}
+                        <input id="category" name="category" type="text" class="validate" required
+                            value="{{ recipe.category }}">
+                    {% endif %}
+                    <label for="category">Category</label>
+                </div>
+            </div>
+            <!-- time -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-clock prefix"></i>
+                    {% if add == True %}
+                        <input id="time" name="time" type="text" class="validate" required>
+                    {% else %}
+                        <input id="time" name="time" type="text" class="validate" required
+                            value="{{ recipe.time }}">
+                    {% endif %}
+                    <label for="time">Time</label>
+                </div>
+            </div>
+            <!-- Yield -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-dice-six prefix"></i>
+                    {% if add == True %}
+                        <input id="yield" name="yield" type="number" class="validate" required>
+                    {% else %}
+                        <input id="yield" name="yield" type="number" class="validate" required
+                            value="{{ recipe.yield }}">
+                    {% endif %}
+                    <label for="yield">Yield</label>
+                </div>
+            </div>
+            <!-- ingredients -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="far fa-sticky-note prefix"></i>
+                    {% if add == True %}
+                        <input id="ingredients" name="ingredients" type="text" class="validate" required>  
+                    {% else %}
+                        <input id="ingredients" name="ingredients" type="text" class="validate" required
+                            value="{{ recipe.ingredients }}">
+                    {% endif %}
+                    <label for="ingredients">Ingredients</label>
+                </div>
+            </div>
+            <!-- Steps -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-shoe-prints prefix"></i>
+                    {% if add == True %}
+                        <textarea id="steps" name="steps" type="text" class="validate" required></textarea>
+                    {% else %}
+                        <textarea id="steps" name="steps" type="text" class="validate" required>
+                            {{- recipe.steps -}}
+                        </textarea>
+                    {% endif %}
+                    <label for="steps">Steps</label>
+                </div>
+            </div>
+            <!-- Add or Edit/Cancel -->
+            <div class="row">
+                {% if add == True %}
+                    <button type="submit" class="col s12 btn-large text-shadow">
+                        Add <i class="fas fa-plus"></i>
+                    </button>
+                {% else %}
+                    <button type="submit" class="col s12 btn-large text-shadow">
+                        Edit <i class="fas fa-edit"></i>
+                    </button>
+                    <!-- cancel edit -->
+                    <a href="{{ url_for('recipes') }}" class="btn-large red text-shadow">
+                        Cancel Edit <i class="fas fa-times-circle"></i>
+                    </a>
+                {% endif %}
+                
+            </div>
+        </div>
+    </form>

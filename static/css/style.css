@@ -11,7 +11,7 @@ main {
     flex: 1 0 auto;
 }
 
-nav{
+.navbar{
     background-color: #ba3b46;
 }
 .brand-logo{
@@ -47,6 +47,5 @@ nav{
     color: #fff;
     font-size: 1.2rem;
     background-color: #ba3b46;
-    width: 100%;
     height: 50px;
 }
