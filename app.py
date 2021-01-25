@@ -24,14 +24,12 @@ def home():
     return render_template('pages/home.html', recipes=recipes)
 
 
-@app.route('/recipes/', methods=['GET', 'POST'])
-def recipes():
-    recipes = mongo.db.recipes.find()
-    return render_template('pages/recipes.html', recipes=recipes)
-
-
 @app.route('/signin', methods=['GET', 'POST'])
 def signin():
+    """
+    Allow user to 
+    get into the webapplication
+    """
     if request.method == "POST":
         # check if email already exists in db
         user = mongo.db.users.find_one(
@@ -56,6 +54,10 @@ def signin():
 
 @app.route("/signup", methods=['GET', 'POST'])
 def signup():
+    """
+    Allow user to 
+    sign up the webapplication
+    """
     if request.method == 'POST':
         # check if email already exists in db
         user_email = mongo.db.users.find_one(
@@ -81,9 +83,29 @@ def signup():
     return render_template('pages/checkuser.html', register=True)
 
 
+@app.route('/recipes/', methods=['GET', 'POST'])
+def recipes():
+    """
+    Lead to recipes
+    """
+    recipes = mongo.db.recipes.find()
+    return render_template('pages/recipes.html', recipes=recipes)
+    
 
-@app.route('/myrecipe/<user_id>', methods=['GET', 'POST'])
+@app.route('/recipe/<recipe_id>')
+def recipe(recipe_id):
+    """
+    Lead to recipe info
+    """
+    recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
+    return render_template('pages/recipe_info.html', recipe=recipe)
+
+
+@app.route('/myrecipes/<user_id>', methods=['GET', 'POST'])
 def myRecipes(user_id):
+    """
+    Lead to myrecipes page
+    """
     # grab the session user's name and email from db
     if session['user_id']:
         user = mongo.db.users.find_one({'_id': ObjectId(user_id)})
@@ -94,23 +116,23 @@ def myRecipes(user_id):
     return redirect(url_for('pages/signin'))
 
 
-@app.route('/logout')
-def logout():
-    """
-    Allows the user to log out
-    Takes user back to home
-    """
-    flash('You have been logged out')
-    session.clear()
-    return redirect(url_for('signin'))
-
-
 @app.route('/recipe/add/<user_id>', methods=["GET", "POST"])
 def addRecipe(user_id):
+    """
+    Add a Recipe and
+    Takes user back to My Recipes
+    """
     user = mongo.db.users.find_one({'_id': ObjectId(user_id)})
+    recipe_image = request.form.get('recipe_image')
+    print(recipe_image)
+    if recipe_image == "":
+        image_default = "https://natashaskitchen.com/wp-content/uploads/2012/09/cookbook.jpg"
+    else:
+        image_default = recipe_image
+
     if request.method == "POST":
-        recipe = {
-            "user_id": session['user_id'],
+        submit = {
+            "user_id":  user_id,
             "name_recipe": request.form.get("recipe"),
             "category": request.form.get("category"),
             "time":request.form.get("time"),
@@ -118,9 +140,9 @@ def addRecipe(user_id):
             "ingredients": request.form.get("ingredients"),
             "steps": request.form.get("steps"),
             "created_by": user['name'],
-            "recipe_image": request.form.get('recipe_image')
+            "recipe_image": image_default
         }
-        mongo.db.recipes.insert_one(recipe)
+        mongo.db.recipes.insert_one(submit)
         flash("Recipe Successfully Added")
         return redirect(url_for("myRecipes", user_id=session['user_id']))
 
@@ -129,6 +151,10 @@ def addRecipe(user_id):
 
 @app.route('/recipe/edit/<user_id>/<recipe_id>', methods=['GET', 'POST'])
 def editRecipe(user_id, recipe_id):
+    """
+    Edit recipe and 
+    Salve the new one
+    """
     user = mongo.db.users.find_one({'_id': ObjectId(user_id)})
     if request.method == "POST":
         submit = {
@@ -152,17 +178,26 @@ def editRecipe(user_id, recipe_id):
                             recipe=recipe)
 
 
-@app.route('/delete_recipe/<recipe_id>')
-def delete_recipe(recipe_id):
+@app.route('/recipe/delete/<recipe_id>')
+def deleteRecipe(recipe_id):
+    """
+    Delete recipe and
+    Takes user back to My Recipes
+    """
     mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
     flash('Recipe Successfully Deleted')
     return redirect(url_for("myRecipes", user_id=session['user_id']))
 
 
-@app.route('/recipe_details/<user_id>/<recipe_id>')
-def recipe_details(user_id, recipe_id):
-    recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
-    return render_template('pages/recipe_details.html', user_id=session['user_id'], recipe=recipe)
+@app.route('/logout')
+def logout():
+    """
+    Allows the user to log out
+    Takes user back to home
+    """
+    flash('You have been logged out')
+    session.clear()
+    return redirect(url_for('signin'))
 
 
 if __name__ == '__main__':
