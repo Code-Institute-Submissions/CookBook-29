@@ -1,11 +1,17 @@
 {% extends 'layout/base.html' %}
-
 {% block content %}
-
-{% include 'components/navigation/navigation.html' %}
-
-    <h1>Home Page</h1>
-
-{% include 'components/footer/footer.html' %}
-
+{% include 'components/navigation/navigation_home.html' %}
+    <div class="container center-align">
+        <h2>Welcome to CookBook WebApplication</h2>
+        <h3>Create, Read, Update, and Delete your Recipes</h3>
+        <hr>
+        <div class="container">
+            <div class="row">
+                <a class="btn-large" href="{{ url_for('signin') }}">SIGN IN</a>
+            </div>
+            <div class="row">
+                <a class="btn-large" href="{{ url_for('signup') }}">SIGN UP</a>
+            </div>
+        </div>
+    </div>
 {% endblock %}
