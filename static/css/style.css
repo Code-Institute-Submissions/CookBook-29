@@ -24,6 +24,22 @@ main {
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
+.recipe-row{
+    align-items: center;
+}
+
+.card{
+    background-color: rgb(97, 201, 168);
+}
+
+.recipe-image{
+    margin-left: 15px;
+}
+
+.recipe-name{
+    margin-left: 10px;   
+}
+
 .footer-text{
     margin-right: 3rem;
 }
@@ -49,3 +65,11 @@ main {
     background-color: #ba3b46;
     height: 50px;
 }
+
+/* Media */
+@media screen and (min-width: 480px) {
+    .recipe-image {
+        width: 34.5vw!important;
+        height: 38vh!important;
+    }
+  }
