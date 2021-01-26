@@ -49,11 +49,10 @@ Happy Code! 👨‍💻 Happy days!
 
 * As a user, I would like to be able to register for the web application so I can have my personal environment.
 * As a user, I want to login after I created an account and see my previous inserted information.
-* As a user, I want to be able to search recipes per cuisine.
 * As a user, I want a dashboard that shows the latest recipes added.
-* As a user, I want a dashboard that shows how many recipes per category.
+* As a user, I want a dashboard that shows recipes per category.
 * As a user, I want to see the recipes without log in.
-* As a user, I want to write a review about a recipe.
+* As a user, I want to be able to search recipes
 * As a user, I want the web application to be easy to use. 
 * As a user, I want the process to add / edit / delete info to be easy.
 
@@ -89,7 +88,7 @@ I made a research in [Jenn David Design](https://jenndavid.com/colors-that-influ
 
 I have visited [Google Fonts](https://fonts.google.com/ "Google Fonts") in order to find appropriate fonts for my web application.
 For the titles and subtitles, I have used the font [Redressed](https://fonts.google.com/specimen/Redressed "Redressed") 
-and for the main text I have used [Bodoni Moda](https://fonts.google.com/specimen/Bodoni+Moda "Bodoni Moda"). 
+and for the main text I have used [Bodoni Moda](https://fonts.google.com/specimen/Bodoni+Moda "Bodoni Moda") and for the brand I have used [Patua One](https://fonts.google.com/specimen/Patua+One).
 
 #### Structure
 
@@ -186,6 +185,10 @@ name            | String
 
 ### **Libraries and Frameworks**
 
+* [MongoDB Atlas](https://www.mongodb.com/)
+* [Flask](https://flask.palletsprojects.com/en/1.1.x/)
+* [PyMongo](https://api.mongodb.com/python/current/tutorial.html)
+* [Jinja](https://jinja.palletsprojects.com/en/2.11.x/)
 * [Font Awesome](https://fontawesome.com/)
 * [Materialize](https://materializecss.com/)
 * [Google Fonts](https://fonts.google.com/)
@@ -197,13 +200,47 @@ name            | String
 * [Balsamic](https://balsamiq.com/wireframes/)
 * [W3C HTML Validation Service](https://validator.w3.org/)
 * [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/)
-* [MongoDB Atlas](https://www.mongodb.com/)
-* [Flask](https://flask.palletsprojects.com/en/1.1.x/)
-* [PyMongo](https://api.mongodb.com/python/current/tutorial.html)
-* [Jinja](https://jinja.palletsprojects.com/en/2.11.x/)
+
 
 ## **Testing**
-### Coming soon👨‍🔧🛠
+
+### **Registration**
+
+#### User story: As a user, I would like to be able to register for the website so I can add my recipes
+
+* **Plan**  
+I want to create a account to be able to add, read, update and delete recipes.
+
+* **Implementation**  
+I created a form where the user can add their name, email, and choose a password. 
+I have used the pattern attribute to only allow certain characters for the name, email, and password. 
+Correct feedback will be displayed whenever the user doesn't meet the pattern critera. 
+Before creating the new account, I will check in the database if the email already exists. 
+If so, correct feedback will be displayed to the user so he can choose another username. 
+Password will be stored with the help of the password generate hash so it is stored safely.
+After the registration was succesfull, the user will be redirected to the My Recipes page to add their first recipe.
+In case the user wrongfully clicked on register instead of sign-in, a link to the sign-in page is provided so the user doesn't have to go back. 
+
+I have used a variable (register) to make the difference between the register and sign-in form.
+When register is equal to True, I added the span which explains the requested format.
+By implementing this, I have managed to merge the register and sign-in form into 1 form which simplifies my code. 
+
+
+* **Test**  
+I have tried to create an account with an already existing email. Correct feedback is displayed.
+Whenever I didn't meet the pattern criteria, the correct feedback was displayed, explaining which charachters etc are allowed. 
+User acccount is created whenever all criteria was met and user is being redirect to My Recipes.
+
+
+* **Result**  
+Registration form is working as planned and user information is stored safely in the mongodb Users collection.
+Feedback provided stands out nicely to inform the user. 
+Redirection to blank My Recipe works as well as planned so the user can choose to add its recipe right away. 
+Tested the registration on various browers and devices and the form is responsive and userfriendly. 
+
+* **Verdict**
+The test has passed all the criteria and works like planned.
+
 
 
 ## **Deployment**
