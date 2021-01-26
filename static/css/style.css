@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Redressed&display=swap');
 
 body{
     background-color: #ffeedb;
@@ -10,14 +11,35 @@ body{
 main {
     flex: 1 0 auto;
 }
+.text-header{
+    background-color:  #ed9b40;
+    font-family: 'Redressed', cursive;
+    border-radius: 100px / 50px;
+}
 
 .navbar{
     background-color: #ba3b46;
 }
+
 .brand-logo{
     font-family: 'Patua One', cursive;
     margin-right: 2rem;
     float: right;
+}
+
+.card-panel {
+    padding: 15px;
+    margin: 10px;
+}
+
+.block {
+    font-size: 4rem;
+    color: #ba3b46;
+    padding-top: 3rem;
+    background-color: #ed9b40;
+    height: 55vh;
+    margin-bottom: 5rem;
+    width: 70%;
 }
 
 .text-shadow{
@@ -30,9 +52,15 @@ main {
 
 .card{
     background-color: rgb(97, 201, 168);
+    margin: 16px;
+}
+
+.row .col.m6 {
+    width: 48%;
 }
 
 .recipe-image{
+    margin-top: 10px;
     margin-left: 15px;
 }
 
@@ -41,13 +69,17 @@ main {
 }
 
 .footer-text{
-    margin-right: 3rem;
+    font-size: 1.2rem;
+    margin-right: 1rem;
 }
 
 .icon{
     color: #fff;
-    font-size: 1.8rem;
-    padding: 10px;
+    padding: 5px;
+}
+
+.textarea{
+    height: 100px;
 }
 
 .btn-small {
@@ -69,7 +101,24 @@ main {
 /* Media */
 @media screen and (min-width: 480px) {
     .recipe-image {
-        width: 34.5vw!important;
+        width: 33.5vw!important;
         height: 38vh!important;
     }
+    .block{
+        font-size: 8rem;
+        height: 70vh;
+        width: 70%;
+    }
+    .footer-text{
+        font-size: 1.8rem;
+    }
+    .icon{
+        font-size: 1.8rem;
+    }
   }
+
+@media screen and (min-height: 810px) {
+    .block{
+        padding-top: 5vh;
+    }
+}
