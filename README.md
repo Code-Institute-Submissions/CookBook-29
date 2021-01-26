@@ -242,6 +242,35 @@ Tested the registration on various browers and devices and the form is responsiv
 The test has passed all the criteria and works like planned.
 
 
+### **Sign In**
+
+#### User story: As a user, I want to login after I created an account and see my previous inserted information.
+
+* **Plan**  
+My plan is to create a login form where the user can fill in its email and password.
+After signing in, the user will be redirected to the My Recipe page where the user can see the previously inserted recipes.
+In case the user doesn't have any Recipe added to its profile, a message will be displayed with "no recipes added" and a link to add first recipe.
+
+* **Implementation**  
+I created a form where the user can fill in its email and password which will be verified with the information stored in the database. 
+When the wrong information is being filled in, the correct feedback will be provided to the user. 
+In case the user wrongfully clicked on sign-in instead of register, a link to the register page is provided so the user doesn't have to go back. 
+
+* **Test**  
+Signing in with the correct email and password works as planned and the correct page will be displayed. 
+When the user fills in the wrong email and/or password, the same message is being displayed on the screen. 
+Also here the feedback message didn't stand out well enough so I have changed the color to red. 
+Redirecting to register page and 'back to homepage' link works as well. 
+
+* **Result**  
+Sign-in form is working as planned and the input is being verified correctly with the stored information of the database.
+Redirection to the correct page works as well as planned so the user can either add a recipe on My Recipes page or view its previously inserted recipes.
+Tested the sign-in form on various browers and devices and the form is responsive and userfriendly. 
+Feedback provided to the user stands out nicely. 
+
+* **Verdict**    
+The test has passed all the criteria and works like planned.
+
 
 ## **Deployment**
 ### Coming soon👨‍🔧🛠
