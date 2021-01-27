@@ -1,16 +1,64 @@
 {% extends 'layout/base.html' %}
 {% block content %}
-{% include 'components/navigation/navigation_home.html' %}
-    <div class="container center-align">
-        <h2>Welcome to CookBook WebApplication</h2>
-        <h3>Create, Read, Update, and Delete your Recipes</h3>
-        <hr>
-        <div class="container">
-            <div class="row">
-                <a class="btn-large" href="{{ url_for('signin') }}">SIGN IN</a>
+{% include 'components/navigation/navigation.html' %}
+    <div class="container text-center">
+        <h2>Search bar</h2>
+    </div>
+    <div class="container jumbotron main">
+        <h1 class="display-6">Latest Recipes </h1>
+        <div class="row">
+            {% for recipe in recipes|reverse %}
+                {% if loop.index < 7 %}
+                    <div class="col-sm-12 col-md-3 card">
+                        <img class="card-img-top" src="{{ recipe.recipe_image }}" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title"><strong>{{ recipe.name_recipe|capitalize }}</strong></h5>
+                            <p class="card-text">
+                                <i class="fab fa-buffer prefix"></i>Category: {{ recipe.category }}
+                            </p>
+                            <p class="card-text">
+                                <i class="fas fa-clock prefix"></i>Time: {{ recipe.time }}
+                            </p>
+                            <p class="card-text">
+                                <i class="fas fa-dice-six prefix"></i>Yield: {{ recipe.yield }}
+                            </p>
+                            <a href="{{ url_for('recipe', user_id=session['user_id'], recipe_id=recipe._id) }}" class="btn btn-primary">Check it out</a>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="container jumbotron main">
+        <h1 class="display-6">Categories</h1>
+        <div class="row">
+            <div class="col-sm-12 col-md-3 card">
+                <img class="card-img-top" src="https://img.taste.com.au/JnXtsVbq/w720-h480-cfill-q80/taste/2019/10/middle-eastern-watermelon-and-goats-cheese-bites-155074-2.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title"><strong>Starters</strong></h5>
+                    <p class="card-text">
+                       The best recipes for your <em>Starter.</em>
+                    </p>
+                </div>
             </div>
-            <div class="row">
-                <a class="btn-large" href="{{ url_for('signup') }}">SIGN UP</a>
+            <div class="col-sm-12 col-md-3 card">
+                <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Beef_fillet_steak_with_mushrooms.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title"><strong>Main</strong></h5>
+                    <p class="card-text">
+                       The best recipes for your <em>Main Course.</em>
+                    </p>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-3 card">
+                <img class="card-img-top" src="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/dessert-main-image-molten-cake-0fbd4f2.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title"><strong>Desserts</strong></h5>
+                    <p class="card-text">
+                       The best recipes for your <em>Dessert.</em>
+                    </p>
+                </div>
             </div>
         </div>
     </div>
