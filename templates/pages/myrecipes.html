@@ -15,30 +15,30 @@
     </div>
     {% include 'components/flash/flash_message.html' %}
 
-    <div class="container">
-        <div class="row recipe-row">
-            {% for recipe in recipes %}
-            <div class="col s12 m6 card">
-                <div class="row">
-                    <img class="col s12 recipe-image center-align" src="{{ recipe.recipe_image }}">
-                </div>
-                <div class="row">
-                    <h4 class="recipe-name"><strong>{{ recipe.name_recipe|capitalize }}</strong></h4>
-                    <div class="card-content">
-                        <h6><strong>Category: {{ recipe.category }}</strong></h6>
-                        <div><i class="fas fa-clock prefix"></i> Time: {{ recipe.time }}</div>
-                        <strong><em>Created by: {{ recipe.created_by }}</em></strong>
+    <div class="container jumbotron main center-align">
+        <div class="row">
+            {% for recipe in recipes|reverse %}
+                <div class="col-sm-12 col-md-3 card">
+                    <img class="card-img-top" src="{{ recipe.recipe_image }}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title"><strong>{{ recipe.name_recipe|capitalize }}</strong></h5>
+                        <p class="card-text">
+                            <i class="fab fa-buffer prefix"></i>Category: {{ recipe.category }}
+                        </p>
+                        <p class="card-text">
+                            <i class="fas fa-clock prefix"></i>Time: {{ recipe.time }}
+                        </p>
+                        <p class="card-text">
+                            <i class="fas fa-dice-six prefix"></i>Yield: {{ recipe.yield }}
+                        </p>
+                        <a href="{{ url_for('editRecipe', user_id=session['user_id'], recipe_id=recipe._id) }}" class="btn btn-primary">
+                            Edit Recipe <i class="fas fa-edit"></i>
+                        </a>
+                        <a href="{{ url_for('deleteRecipe', recipe_id=recipe._id) }}" class="btn btn-danger">
+                            Delete Recipe <i class="fas fa-ban"></i>
+                        </a>
                     </div>
                 </div>
-                <div class="row">
-                    <a href="{{ url_for('editRecipe', user_id=session['user_id'], recipe_id=recipe._id) }}" class="btn-small light-blue lighten-1">
-                        Edit Recipe <i class="fas fa-plus-square right"></i>
-                    </a>
-                    <a href="{{ url_for('deleteRecipe', recipe_id=recipe._id) }}" class="btn-small red text-shadow">
-                        Delete Recipe <i class="fas fa-plus-square right"></i>
-                    </a>
-                </div>
-            </div>
             {% else %}
                 <div class="row block center-align">
                     No Recipes added
