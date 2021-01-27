@@ -1,21 +1,20 @@
 {% extends 'layout/base.html' %}
 {% block content %}
-{% include 'components/navigation/navigation_home.html' %}
+{% include 'components/navigation/navigation.html' %}
     {% if register == True %}
-    <div class="container center-align" id="register">
-        <h2 class="heading">Register here!</h2>
-        <div class="row">
-            {% include 'components/flash/flash_message.html' %}
-            {% include 'components/forms/authentication.html' %}
-        </div>
-    </div>
+    <div class="container" id="register">
+        <h2 class="heading text-center">Register here!</h2>
     {% else %}
-    <div class="container center-align" id="sign-in">
-        <h2 class="heading">Sign in to your account</h2>
-        <div class="row">
-            {% include 'components/flash/flash_message.html' %}
+    <div class="container" id="sign-in">
+        <h2 class="heading text-center">Sign in to your account</h2>
+    {% endif %}
+        
+        <div class="jumbotron container jumbo-sign">
             {% include 'components/forms/authentication.html' %}
         </div>
+        <div class="containter text-center flash">
+            {% include 'components/flash/flash_message.html' %}
+        </div>
     </div>
-    {% endif %}
+    
 {% endblock %}
