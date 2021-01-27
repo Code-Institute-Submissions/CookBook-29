@@ -1,30 +1,86 @@
 @import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Redressed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda&display=swap');
 
 body{
     background-color: #ffeedb;
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    font-family: 'Bodoni Moda', serif;
 }
 
-main {
-    flex: 1 0 auto;
-}
-.text-header{
-    background-color:  #ed9b40;
-    font-family: 'Redressed', cursive;
-    border-radius: 100px / 50px;
+.main {
+    background-color: #ed9b40;
 }
 
+/* NAVBAR */
 .navbar{
     background-color: #ba3b46;
 }
 
-.brand-logo{
+.navbar-brand{
     font-family: 'Patua One', cursive;
-    margin-right: 2rem;
-    float: right;
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+.nav-link{
+    color: #fff;
+    font-family: 'Bodoni Moda', serif;
+    font-size: 1.2rem;
+}
+
+/* Cards Recipe */
+.card{
+    width: 18rem;
+    margin-left: 4vw!important;
+}
+
+.card-img-top{
+    max-height: 10rem;
+}
+
+.display-6{
+    color: #fff;
+}
+
+/* SIGN */
+.jumbo-sign{
+    background-color:  #ed9b40;
+}
+.switch-sign{
+    font-size: 1.3rem;
+}
+
+/* FLASH MESSAGES */
+.flash{
+    color: #fff;
+    background-color: #ba3b46;
+}
+
+
+.text-header{
+    font-size: 3rem;
+    font-family: 'Redressed', cursive;
+}
+
+
+
+
+.info-text{
+    margin-left: 5rem;    
+}
+
+.text-botton{
+    font-size: 1.2rem;
+}
+
+
+.box-recipe{
+    background-color: #ed9b40;
+    height: 100vh;
+    width: 100%;
 }
 
 .card-panel {
@@ -51,7 +107,7 @@ main {
 }
 
 .card{
-    background-color: rgb(97, 201, 168);
+    background-color: #ffeedb;
     margin: 16px;
 }
 
