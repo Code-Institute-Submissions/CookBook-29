@@ -5,6 +5,16 @@
     
     <h2 class="text-center text-header">Recipes</h2>
 
+    <div class="container text-center mt-3 mb-3">
+        <form action="{{ url_for('search_recipes') }}" method="POST" class="form-inline">
+            <label for="query">Search Recipes </label>
+            <input class="form-control mr-sm-2" type="text" name="query" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success " type="submit">Search</button>
+            <a href="{{ url_for('home') }}" type="button" class="btn btn-outline-danger ml-4">Reset</a>
+            
+        </form>
+    </div>
+
     <div class="container jumbotron main center-align">
         <div class="row">
             {% for recipe in recipes|reverse %}
