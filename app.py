@@ -116,6 +116,20 @@ def myRecipes(user_id):
     return redirect(url_for('pages/signin'))
 
 
+@app.route('/search', methods=['GET', 'POST'])
+def search():
+    query = request.form.get('query')
+    recipes = mongo.db.recipes.find({'$text': {'$search': query}})
+    return render_template('pages/home.html', recipes=recipes)
+
+
+@app.route('/search', methods=['GET', 'POST'])
+def search_recipes():
+    query = request.form.get('query')
+    recipes = mongo.db.recipes.find({'$text': {'$search': query}})
+    return render_template('pages/recipes.html', recipes=recipes)
+
+
 @app.route('/recipe/add/<user_id>', methods=["GET", "POST"])
 def addRecipe(user_id):
     """
