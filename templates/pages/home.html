@@ -1,11 +1,17 @@
 {% extends 'layout/base.html' %}
 {% block content %}
 {% include 'components/navigation/navigation.html' %}
-    <div class="container text-center">
-        <h2>Search bar</h2>
+    <div class="container text-center mt-5">
+        <form action="{{ url_for('search') }}" method="POST" class="form-inline">
+            <label for="query">Search Recipes </label>
+            <input class="form-control mr-sm-2" type="text" name="query" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success " type="submit">Search</button>
+            <a href="{{ url_for('home') }}" type="button" class="btn btn-outline-danger ml-4">Reset</a>
+            
+        </form>
     </div>
-    <div class="container jumbotron main">
-        <h1 class="display-6">Latest Recipes </h1>
+    <div class="container jumbotron main mt-5">
+        <h1 class="display-6 text-shadow">Latest Recipes </h1>
         <div class="row">
             {% for recipe in recipes|reverse %}
                 {% if loop.index < 7 %}
@@ -31,7 +37,7 @@
     </div>
 
     <div class="container jumbotron main">
-        <h1 class="display-6">Categories</h1>
+        <h1 class="display-6 text-shadow">Categories</h1>
         <div class="row">
             <div class="col-sm-12 col-md-3 card">
                 <img class="card-img-top" src="https://img.taste.com.au/JnXtsVbq/w720-h480-cfill-q80/taste/2019/10/middle-eastern-watermelon-and-goats-cheese-bites-155074-2.jpg" alt="Card image cap">
