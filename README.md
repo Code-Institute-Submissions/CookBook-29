@@ -290,6 +290,26 @@ As planned every user with credentials or not can have access to the recipes.
 The test has passed all the criteria and works like planned.
 
 
+#### User story: As a user, I want to be able to search recipes.
+
+* **Plan**
+The plan is create a search bar where users can search recipes by nome of the recipe or ingredients.
+
+* **Implementation** 
+First I added a search bar to home and recipes pages, then I created indexes to search in mongo db so that user can search by name of the recipe or ingredients.
+Then I created two functions in app.py, one for for search in the home page and another to search in the recipes page.
+
+* **Test** 
+I have testing the search functionality with empty field, with a wrong word, and with a word in the database and all response was correct.
+ 
+ * **Result** 
+ The result was satisfactory it shows the correct output depends on the input.
+ 
+ * **Verdict**
+ The test has passed all the criteria and works like planned.
+
+
+
 ## **Deployment**
 ### Coming soon👨‍🔧🛠
 
