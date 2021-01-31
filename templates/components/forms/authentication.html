@@ -8,9 +8,12 @@
             <!-- name -->
             <div class="form-group">
                 <i class="fas fa-user prefix"></i>
-                <label for="name">Name</label>
-                <input id="name" name="name" type="text" minlength="3" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$"
+                <label class="form-label" for="name">First Name</label>
+                <input id="name" name="name" type="text" minlength="3" maxlength="15" pattern="^[a-zA-Z0-9]{3,15}$"
                     class="validate form-control" required>
+                <small>
+                    *Only the first name    
+                </small>
             </div>
         {% endif %}
 
