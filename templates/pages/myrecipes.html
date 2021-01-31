@@ -13,11 +13,14 @@
             </div>
         </div>
     </div>
-    {% include 'components/flash/flash_message.html' %}
+    
 
-    <div class="container jumbotron main center-align">
+    <div class="container jumbotron main">
+        <h4 class="text-center">
+            {% include 'components/flash/flash_message.html' %}
+        </h4>
         <div class="row">
-            {% for recipe in recipes|reverse %}
+            {% for recipe in recipes %}
                 <div class="col-sm-12 col-md-3 card">
                     <img class="card-img-top" src="{{ recipe.recipe_image }}" alt="Card image cap">
                     <div class="card-body">
@@ -40,11 +43,13 @@
                     </div>
                 </div>
             {% else %}
-                <div class="row block center-align">
-                    No Recipes added
-                </div>
-            {% endfor %}
         </div>
+        
+        <div class="center-text">
+            <h2>No Recipes added</h2>
+            <h4>Add a Recipe <a href="{{ url_for('addRecipe', user_id=session['user_id']) }}">Click here</a></h4>
+        </div>
+        {% endfor %}
     </div>
     
 {% include 'components/footer/footer.html' %}        
