@@ -49,10 +49,9 @@ Happy Code! 👨‍💻 Happy days!
 
 * As a user, I would like to be able to register for the web application so I can have my personal environment.
 * As a user, I want to login after I created an account and see my previous inserted information.
-* As a user, I want a dashboard that shows the latest recipes added.
-* As a user, I want a dashboard that shows recipes per category.
+* As a user, I want a home dashboard page that shows the latest recipes added.
 * As a user, I want to see the recipes without log in.
-* As a user, I want to be able to search recipes
+* As a user, I want to be able to search recipes.
 * As a user, I want the web application to be easy to use. 
 * As a user, I want the process to add / edit / delete info to be easy.
 
@@ -270,6 +269,45 @@ Feedback provided to the user stands out nicely.
 
 * **Verdict**    
 The test has passed all the criteria and works like planned.
+
+
+#### User story: As a user, I want a home dashboard page that shows the latest recipes added.
+
+* **Plan**
+My plan was create a home page that shows the latest recipes added, even for user that are not subscribe, they can have access to the home page
+and they can see the recipes.
+
+* **Implementation** 
+I created a panel with the last six recipes added, I used a for reverse to get the recipes backwords.
+
+* **Test** 
+As planned every user with credentials or not can have access to the recipes.
+ 
+ * **Result**  
+ It works just fine and show the user the last six recipes as planned.
+ 
+ * **Verdict**    
+The test has passed all the criteria and works like planned.
+
+
+#### User story: As a user, I want to be able to search recipes.
+
+* **Plan**
+The plan is create a search bar where users can search recipes by nome of the recipe or ingredients.
+
+* **Implementation** 
+First I added a search bar to home and recipes pages, then I created indexes to search in mongo db so that user can search by name of the recipe or ingredients.
+Then I created two functions in app.py, one for for search in the home page and another to search in the recipes page.
+
+* **Test** 
+I have testing the search functionality with empty field, with a wrong word, and with a word in the database and all response was correct.
+ 
+ * **Result** 
+ The result was satisfactory it shows the correct output depends on the input.
+ 
+ * **Verdict**
+ The test has passed all the criteria and works like planned.
+
 
 
 ## **Deployment**
