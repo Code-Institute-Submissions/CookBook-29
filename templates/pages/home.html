@@ -32,8 +32,13 @@
                         </div>
                     </div>
                 {% endif %}
-            {% endfor %}
+            {% else %}
         </div>
+            
+        <div class="center-text">
+            <h2>{{ query }} not found</h2>
+        </div>
+        {% endfor %}
     </div>
 
     <div class="container jumbotron main">
