@@ -10,12 +10,12 @@
             <label for="query">Search Recipes </label>
             <input class="form-control mr-sm-2" type="text" name="query" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success " type="submit">Search</button>
-            <a href="{{ url_for('home') }}" type="button" class="btn btn-outline-danger ml-4">Reset</a>
+            <a href="{{ url_for('recipes') }}" type="button" class="btn btn-outline-danger ml-4">Reset</a>
             
         </form>
     </div>
 
-    <div class="container jumbotron main center-align">
+    <div class="container jumbotron main">
         <div class="row">
             {% for recipe in recipes|reverse %}
                 <div class="col-sm-12 col-md-3 card">
@@ -34,10 +34,13 @@
                         <a href="{{ url_for('recipe', user_id=session['user_id'], recipe_id=recipe._id) }}" class="btn btn-primary">Check it out</a>
                     </div>
                 </div>
-            {% endfor %}
+            {% else %}
         </div>
+        <div class="center-text">
+            <h2>{{ query }} not found</h2>
+        </div>
+        {% endfor %}
     </div>
-
     
 {% include 'components/footer/footer.html' %}        
 
