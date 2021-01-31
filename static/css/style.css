@@ -13,6 +13,14 @@ body{
 .main {
     background-color: #ed9b40;
 }
+.text-shadow{
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.text-header{
+    font-size: 2rem;
+    font-family: 'Redressed', cursive;
+}
 
 /* NAVBAR */
 .navbar{
@@ -21,7 +29,7 @@ body{
 
 .navbar-brand{
     font-family: 'Patua One', cursive;
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: #fff;
 }
 
@@ -31,10 +39,21 @@ body{
     font-size: 1.2rem;
 }
 
+.fa-bars {
+    font-size: 2rem;
+    font-weight: 900;
+}
+
 /* Cards Recipe */
 .card{
     width: 18rem;
     margin-left: 4vw!important;
+    background-color: #ffeedb;
+    margin: 16px;
+}
+.card-recipe{
+    width: 18rem;
+    margin-left: 0px!important;
 }
 
 .card-img-top{
@@ -45,50 +64,62 @@ body{
     color: #fff;
 }
 
+.recipe-image{
+    max-height: 14rem;
+    width: 16rem;
+}
+
+.recipe-name{
+    margin-left: 10px;   
+}
+
+.details{
+    margin-left: 2rem;
+}
+.prefix{
+    margin-right: 5px;
+}
+ul {
+    list-style-type: none;
+  }
+  
+  
 /* SIGN */
 .jumbo-sign{
     background-color:  #ed9b40;
 }
+
 .switch-sign{
     font-size: 1.3rem;
 }
-
+  
 /* FLASH MESSAGES */
 .flash{
     color: #fff;
     background-color: #ba3b46;
 }
-
-
-.text-header{
-    font-size: 3rem;
-    font-family: 'Redressed', cursive;
+  
+/* ADD / EDIT PAGE */
+.jumbo-add{
+    background-color:  #ed9b40;
+}
+.label-add{
+    color: #fff;
+    font-size: 1rem;
 }
 
-
-
-
-.info-text{
-    margin-left: 5rem;    
+.prefix-details{
+    color: #fff;
+    font-size: 2rem;
 }
 
-.text-botton{
-    font-size: 1.2rem;
-}
-
-
-.box-recipe{
-    background-color: #ed9b40;
-    height: 100vh;
+  .textarea{
+    height: 100px;
     width: 100%;
 }
-
-.card-panel {
-    padding: 15px;
-    margin: 10px;
-}
-
+  
 .block {
+    text-align: center;
     font-size: 4rem;
     color: #ba3b46;
     padding-top: 3rem;
@@ -97,68 +128,55 @@ body{
     margin-bottom: 5rem;
     width: 70%;
 }
-
-.text-shadow{
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-}
-
-.recipe-row{
-    align-items: center;
-}
-
-.card{
-    background-color: #ffeedb;
-    margin: 16px;
-}
-
-.row .col.m6 {
-    width: 48%;
-}
-
-.recipe-image{
-    margin-top: 10px;
-    margin-left: 15px;
-}
-
-.recipe-name{
-    margin-left: 10px;   
-}
-
-.footer-text{
-    font-size: 1.2rem;
+p{
+    margin-left: 1rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    justify-content: normal;
+    text-align: justify;
     margin-right: 1rem;
+    font-size: 0.8rem;
 }
-
-.icon{
-    color: #fff;
-    padding: 5px;
-}
-
-.textarea{
-    height: 100px;
-}
-
-.btn-small {
-    margin: 20px 5px 0px 5px;
-}
-
-.collapsible-header .col strong {
-    margin: 5px;
-    line-height: 42px;
-}
-
+  
+/* footer */
 .footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
     color: #fff;
     font-size: 1.2rem;
     background-color: #ba3b46;
     height: 50px;
 }
+  
+.footer-text{
+    font-size: 1rem;
+    margin-right: 1rem;
+}
+  
+.icon{
+    color: #fff;
+    padding: 5px;
+}
 
-/* Media */
-@media screen and (min-width: 480px) {
+  
+  /* Media */
+@media screen and (min-width: 690px) {
+    .text-header{
+        font-size: 3rem;
+    }
+    .navbar-brand{
+        font-size: 2.5rem;
+    }
     .recipe-image {
-        width: 33.5vw!important;
-        height: 38vh!important;
+        width: 90%;
+    }
+    .label-add{
+        font-size: 1.5rem;
+    }
+    .jumbo-add{
+        max-width: 60%!important;
     }
     .block{
         font-size: 8rem;
@@ -166,15 +184,24 @@ body{
         width: 70%;
     }
     .footer-text{
-        font-size: 1.8rem;
+        font-size: 1rem;
     }
     .icon{
-        font-size: 1.8rem;
+        font-size: 1rem;
     }
-  }
-
+    p{
+        font-size: 1rem;
+    }
+}
+  
 @media screen and (min-height: 810px) {
     .block{
         padding-top: 5vh;
+    }
+    .btn{
+        font-size: 0.6rem;
+    }
+    .prefix{
+        font-size: 1rem;
     }
 }
