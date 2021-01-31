@@ -28,7 +28,7 @@ def home():
 def signin():
     """
     Allow user to 
-    get into the webapplication
+    get into the web application
     """
     if request.method == "POST":
         # check if email already exists in db
@@ -42,11 +42,11 @@ def signin():
                 return redirect(url_for('myRecipes', user_id=user_id))
             else:
                 # invalid password match
-                flash('Incorrect Username and/or Password')
+                flash('Incorrect Email and/or Password')
                 return redirect(url_for('signin'))
         else:
             # username doesn't exist
-            flash('Incorrect Username and/or Password')
+            flash('Incorrect Email and/or Password')
             return redirect(url_for('signin'))
 
     return render_template('pages/checkuser.html')
@@ -73,12 +73,8 @@ def signup():
             'password': generate_password_hash(request.form.get('password'))
         }
         mongo.db.users.insert_one(register)
-        if mongo.db.users.find_one({'email': user_email}) is not None:
-            user = mongo.db.users.find_one({'email': user_email})
-            user_id = str(user['_id'])
-            session['user_id'] = str(user_id)
-            flash('Registration Successful') 
-            return redirect(url_for('myRecipes', user_id=user_id))
+        flash('Registration Successful') 
+        return redirect(url_for('signin'))
 
     return render_template('pages/checkuser.html', register=True)
 
@@ -116,18 +112,18 @@ def myRecipes(user_id):
     return redirect(url_for('pages/signin'))
 
 
-@app.route('/search', methods=['GET', 'POST'])
+@app.route('/search/', methods=['GET', 'POST'])
 def search():
     query = request.form.get('query')
     recipes = mongo.db.recipes.find({'$text': {'$search': query}})
-    return render_template('pages/home.html', recipes=recipes)
+    return render_template('pages/home.html', recipes=recipes, query=query)
 
 
-@app.route('/search', methods=['GET', 'POST'])
+@app.route('/search/recipes/', methods=['GET', 'POST'])
 def search_recipes():
     query = request.form.get('query')
     recipes = mongo.db.recipes.find({'$text': {'$search': query}})
-    return render_template('pages/recipes.html', recipes=recipes)
+    return render_template('pages/recipes.html', recipes=recipes, query=query)
 
 
 @app.route('/recipe/add/<user_id>', methods=["GET", "POST"])
@@ -137,14 +133,14 @@ def addRecipe(user_id):
     Takes user back to My Recipes
     """
     user = mongo.db.users.find_one({'_id': ObjectId(user_id)})
-    recipe_image = request.form.get('recipe_image')
-    print(recipe_image)
-    if recipe_image == "":
-        image_default = "https://natashaskitchen.com/wp-content/uploads/2012/09/cookbook.jpg"
-    else:
-        image_default = recipe_image
-
+    
     if request.method == "POST":
+        recipe_image = request.form.get('recipe_image')
+        if len(recipe_image) == 0:
+            image_default = "https://natashaskitchen.com/wp-content/uploads/2012/09/cookbook.jpg"
+        else:
+            image_default = recipe_image
+
         submit = {
             "user_id":  user_id,
             "name_recipe": request.form.get("recipe"),
@@ -152,7 +148,9 @@ def addRecipe(user_id):
             "time":request.form.get("time"),
             "yield": request.form.get("yield"),
             "ingredients": request.form.get("ingredients"),
-            "steps": request.form.get("steps"),
+            "step1": request.form.get("step1"),
+            "step2": request.form.get("step2"),
+            "step3": request.form.get("step3"),
             "created_by": user['name'],
             "recipe_image": image_default
         }
@@ -178,7 +176,9 @@ def editRecipe(user_id, recipe_id):
             "time":request.form.get("time"),
             "yield": request.form.get("yield"),
             "ingredients": request.form.get("ingredients"),
-            "steps": request.form.get("steps"),
+            "step1": request.form.get("step1"),
+            "step2": request.form.get("step2"),
+            "step3": request.form.get("step3"),
             "created_by": user['name'],
             "recipe_image": request.form.get('recipe_image')
         }
