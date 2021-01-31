@@ -2,6 +2,92 @@
 {% block content %}
 {% include 'components/navigation/navigation.html' %}
 
-<h2>{{ recipe.name_recipe }}</h2>
+    <h2 class="text-center text-header">Recipes</h2>
 
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="container jumbotron main">
+                    <h3>{{ recipe.name_recipe|capitalize }}</h3>
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <img class="recipe-image" src="{{ recipe.recipe_image }}">
+                        </div>
+                        <div class="col-12 col-md-5 details">
+                            <div class="row mt-3 mb-3">
+                                <i class="fab fa-buffer prefix"></i>Category: {{ recipe.category }}
+                            </div>
+                            <div class="row mt-3 mb-3">
+                                <i class="fas fa-clock prefix"></i>Time: {{ recipe.time }}
+                            </div>
+                            <div class="row mt-3 mb-3">
+                                <i class="fas fa-dice-six prefix"></i>Yield: {{ recipe.yield }}
+                            </div>
+                            <div class="row mt-3 mb-3">
+                                <i class="fas fa-user-circle prefix"></i></i>Created by: {{ recipe.created_by }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container jumbotron main">
+                    <div class="ingredients">
+                        <h3><i class="far fa-sticky-note prefix"></i>Ingredients</h3><hr>
+                        <p>{{ recipe.ingredients }}</p>
+                    </div>
+                    <div class="steps-text center-align">
+                        <h3><i class="fas fa-shoe-prints prefix"></i>Steps</h3><hr>
+                        <ul>
+                            <li>
+                                <h5>Step 1</h5>
+                                <p>{{ recipe.step1 }}</p>
+                            </li>
+                            {% if recipe.step2|length > 0 %}
+                                <li>
+                                    <h5>Step 2</h5>
+                                    <p>{{ recipe.step2 }}</p>
+                                </li>
+                            {% endif %}
+                            {% if recipe.step3|length > 0 %}
+                                <li>
+                                    <h5>Step 3</h5>
+                                    <p>{{ recipe.step3 }}</p>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container jumbotron main">
+        <h1 class="display-6 text-shadow">Categories</h1>
+        <div class="row">
+            <div class="col-sm-12 col-md-3 card">
+                <img class="card-img-top" src="https://img.taste.com.au/JnXtsVbq/w720-h480-cfill-q80/taste/2019/10/middle-eastern-watermelon-and-goats-cheese-bites-155074-2.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title"><strong>Starters</strong></h5>
+                    <p class="card-text">
+                       The best recipes for your <em>Starter.</em>
+                    </p>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-3 card">
+                <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Beef_fillet_steak_with_mushrooms.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title"><strong>Main</strong></h5>
+                    <p class="card-text">
+                       The best recipes for your <em>Main Course.</em>
+                    </p>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-3 card">
+                <img class="card-img-top" src="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/dessert-main-image-molten-cake-0fbd4f2.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title"><strong>Desserts</strong></h5>
+                    <p class="card-text">
+                       The best recipes for your <em>Dessert.</em>
+                    </p>
+                </div>
+            </div>
+        </div>
 {% endblock %}
