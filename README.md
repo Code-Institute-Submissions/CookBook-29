@@ -275,10 +275,10 @@ I created a panel with the last six recipes added, I used a for reverse to get t
 * **Test** 
 As planned every user with credentials or not can have access to the recipes.
  
- * **Result**  
- It works just fine and show the user the last six recipes as planned.
+* **Result**  
+It works just fine and show the user the last six recipes as planned.
  
- * **Verdict**    
+* **Verdict**    
 The test has passed all the criteria and works like planned.
 
 
@@ -294,11 +294,11 @@ Then I created two functions in app.py, one for for search in the home page and 
 * **Test** 
 I have testing the search functionality with empty field, with a wrong word, and with a word in the database and all response was correct.
  
- * **Result** 
- The result was satisfactory it shows the correct output depends on the input.
+* **Result** 
+The result was satisfactory it shows the correct output depends on the input.
  
- * **Verdict**
- The test has passed all the criteria and works like planned.
+* **Verdict**
+The test has passed all the criteria and works like planned.
 
 
 #### User story: As a user, I want the web application to be easy to use. 
@@ -313,13 +313,32 @@ If the user sign in they can add a recipe and after that edit or delete it easil
 * **Test** 
 Every panel loads well and the experience is good and smooth.
  
- * **Result** 
- The result is good, it works well through different devices.
+* **Result** 
+The result is good, it works well through different devices.
  
- * **Verdict**
- The test has passed all the criteria and works like planned.
+* **Verdict**
+The test has passed all the criteria and works like planned.
  
  
+### Add
+ 
+#### User story: As a user, I want the process to add / edit / delete info to be easy.
+
+* **Plan**
+The plan is once the user gain access to the application they can add a recipe.
+
+* **Implementation** 
+In the first access the user will be presented with a message saying "No recipes Added" and under that "Add a recipe click here" and by clicking there it will lead you to the recipe/add page. If the user already have recipes added they can access the recipe/add page by clicking on the navigation bar.
+Once in the recipe/add page the user will see a form with different fields such as; name of the recipe, category, ingredients, steps, and etc.
+
+* **Test** 
+I added multiples recipes from different users. 
+ 
+* **Result** 
+The result is good, I can add recipes that are stored in mongo db.
+
+* **Verdict**
+The test has passed all the criteria and works like planned.
 
 ## **Deployment**
 ### Coming soon👨‍🔧🛠
