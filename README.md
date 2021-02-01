@@ -40,8 +40,7 @@ Happy Code! 👨‍💻 Happy days!
 * This web application has to work well on all kind of devices like mobile phones, tables and desktops.
 * I want to have a clear dashboard where I can see all the different recipes I have created. 
 * I want to have a profile for me where I can create, update and delete recipes. 
-* I want to see the recipes even if I don't have registered. 
-* I want to be able to write a review about an recipe.
+* I want to see the recipes even if I don't have registered.
 * The web application has to be user friendly.
 * Visually appealing web application.
 
@@ -68,18 +67,16 @@ Happy Code! 👨‍💻 Happy days!
 * Appealing dashboard with a functional overview.
 * Easy way to add a recipe to the dashboard.
 * Ability to edit and delete existing recipes.
-* Ability to let a review.
 
 #### Expectations
 
 * When you have multiple recipes, it should be easy to navigate between them.
 * To have a dashboard where all the necessary information is visible.
 * It should be easy to add another recipe.
-* It should be easy to add a review in a recipe.
 
 ### **Design Choices**🎨
 
-I made a research in [Jenn David Design](https://jenndavid.com/colors-that-influence-food-sales-infographic/ "jenndavid.com") website, where I found that a mix of red, orange and green would be a nice look for a web application that present recipes. Then I have used [Coolors](https://coolors.co/ "Coolors.co") to come up with a pallete of colors that I already had chosen.
+I made a research in [Jenn David Design](https://jenndavid.com/colors-that-influence-food-sales-infographic/ "jenndavid.com") website, where I found that a mix of red, orange and light brown would be a nice look for a web application that present recipes. Then I have used [Coolors](https://coolors.co/ "Coolors.co") to come up with a pallete of colors that I already had chosen.
 
 ![palette](https://github.com/alychinque/CookBook/blob/master/wireframes/palette.png)
 
@@ -91,9 +88,8 @@ and for the main text I have used [Bodoni Moda](https://fonts.google.com/specime
 
 #### Structure
 
-I have chosen to use [Materialize](https://materializecss.com/) to create an overall structure for my website. 
-Materialize provides various elements of CSS and Javascript which is very helpful to keep a good structure on your page. 
-The reason why I choose Materiaize is mainly due to the various features they offer like a datepicker, floating action button etc. 
+I have chosen to use [Boootstrap](https://getbootstrap.com/) to create an overall structure for my website. 
+Bootstrap provides various elements of CSS and Javascript which is very helpful to keep a good structure on your page. 
 
 ## **Wireframes and Flowcharts**👨‍🔧
 
@@ -142,14 +138,10 @@ category        | String
 time            | String
 yield           | String
 ingredients     | String
-steps           | String
+step1           | String
+step2           | String
+step3           | String
 
-#### **Category:**
-
-Key             | Value
-----------------|-----------
-_id             | ObjectId
-name            | String
 
 ## **Features**🤖
 
@@ -309,6 +301,25 @@ I have testing the search functionality with empty field, with a wrong word, and
  The test has passed all the criteria and works like planned.
 
 
+#### User story: As a user, I want the web application to be easy to use. 
+
+* **Plan**
+The plan is create an application user friendly, where the user can find everything easily. Also an application responsive.
+
+* **Implementation** 
+I create a home page with a panel showing the last six recipes. The user can easily find a navbar where they can sign in, sign up or chech the whole page with recipes. 
+If the user sign in they can add a recipe and after that edit or delete it easily. also they can logout.
+
+* **Test** 
+Every panel loads well and the experience is good and smooth.
+ 
+ * **Result** 
+ The result is good, it works well through different devices.
+ 
+ * **Verdict**
+ The test has passed all the criteria and works like planned.
+ 
+ 
 
 ## **Deployment**
 ### Coming soon👨‍🔧🛠
