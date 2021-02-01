@@ -495,3 +495,7 @@ To clone the project:
 1. Just beneath, click "Deploy branch". Heroku will now start building the app. When the build is complete, click "view app" to open it.
 1. In order to commit your changes to the branch, use git push to push your changes. 
 
+## **Credits**
+
+* A big thanks to my mentor Simen [EvenTiret](https://github.com/Eventyret)
+* A big thanks to [Stackoverflow](https://stackoverflow.com/)
