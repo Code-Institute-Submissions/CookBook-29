@@ -1,6 +1,6 @@
 # **CookBook**
 
-![multi platform](https://#")
+![multi platform](wireframes/multiplatform.png)
 
 ## **Project Goal**
 
