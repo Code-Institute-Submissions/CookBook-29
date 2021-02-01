@@ -330,12 +330,33 @@ The plan is once the user gain access to the application they can add a recipe.
 * **Implementation** 
 In the first access the user will be presented with a message saying "No recipes Added" and under that "Add a recipe click here" and by clicking there it will lead you to the recipe/add page. If the user already have recipes added they can access the recipe/add page by clicking on the navigation bar.
 Once in the recipe/add page the user will see a form with different fields such as; name of the recipe, category, ingredients, steps, and etc.
+The user can a add a picture by adding a URL if they do not add a picture it automaticaly adds a default picture.
 
 * **Test** 
 I added multiples recipes from different users. 
  
 * **Result** 
 The result is good, I can add recipes that are stored in mongo db.
+
+* **Verdict**
+The test has passed all the criteria and works like planned.
+
+
+### Edit
+ 
+#### User story: As a user, I want the process to add / edit / delete info to be easy.
+
+* **Plan**
+The plan is once the user add a recipe, they are able to edit it if they want.
+
+* **Implementation** 
+I used the same form that I use to add a recipe, I just add some ifs in case of it be add function or edit in order to differentiate. Once the user have a recipe added they can edit it. In the page My Recipes there is a edit button to each recipe. 
+
+* **Test** 
+I edit different recipes from different accounts.
+ 
+* **Result** 
+The result is good, I can edit my own recipes and then store the new one in mongo db.
 
 * **Verdict**
 The test has passed all the criteria and works like planned.
