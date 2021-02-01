@@ -2,7 +2,7 @@
 {% block content %}
 {% include 'components/navigation/navigation.html' %}
     <div class="container text-center mt-5">
-        <form action="{{ url_for('search') }}" method="POST" class="form-inline">
+        <form id="query" action="{{ url_for('search') }}" method="POST" class="form-inline">
             <label for="query">Search Recipes </label>
             <input class="form-control mr-sm-2" type="text" name="query" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success " type="submit">Search</button>
@@ -34,6 +34,7 @@
                 {% endif %}
             {% else %}
         </div>
+    </div>
             
         <div class="center-text">
             <h2>{{ query }} not found</h2>
