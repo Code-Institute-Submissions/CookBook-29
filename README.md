@@ -361,6 +361,26 @@ The result is good, I can edit my own recipes and then store the new one in mong
 * **Verdict**
 The test has passed all the criteria and works like planned.
 
+
+### Delete
+ 
+#### User story: As a user, I want the process to add / edit / delete info to be easy.
+
+* **Plan**
+The plan is to delete any recipe that the user added previously.
+
+* **Implementation** 
+In the page My Recipes there is a delete button to each recipe. The user can delete any recipe that they had added. The function will removes the recipe from the database mongo db.
+
+* **Test** 
+I delete different recipes from different accounts.
+ 
+* **Result** 
+The result is good, I can delete my own recipes and then store them from the database in mongo db.
+
+* **Verdict**
+The test has passed all the criteria and works like planned.
+
 ## **Deployment**
 ### Coming soon👨‍🔧🛠
 
