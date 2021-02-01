@@ -51,6 +51,16 @@ body{
     background-color: #ffeedb;
     margin: 16px;
 }
+
+.card-text {
+    margin-left: 0px!important;
+    margin-right: 0px!important;
+}
+
+.card-body{
+    padding: 1rem 0.25rem;
+}
+
 .card-recipe{
     width: 18rem;
     margin-left: 0px!important;
@@ -128,14 +138,14 @@ ul {
     margin-bottom: 5rem;
     width: 70%;
 }
-p{
+.ingredients{
     margin-left: 1rem;
     margin-top: 0;
     margin-bottom: 1rem;
     justify-content: normal;
     text-align: justify;
     margin-right: 1rem;
-    font-size: 0.8rem;
+    font-size: 1rem;
 }
   
 /* footer */
