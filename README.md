@@ -328,7 +328,7 @@ The test has passed all the criteria and works like planned.
 The plan is once the user gain access to the application they can add a recipe.
 
 * **Implementation** 
-In the first access the user will be presented with a message saying "No recipes Added" and under that "Add a recipe click here" and by clicking there it will lead you to the recipe/add page. If the user already have recipes added they can access the recipe/add page by clicking on the navigation bar.
+In the first access the user will be presented with a message saying "No recipes Added" and under that "Add a recipe click here" and by clicking on there it will lead you to the recipe/add page. If the user already have recipes added they can access the recipe/add page by clicking on the navigation bar.
 Once in the recipe/add page the user will see a form with different fields such as; name of the recipe, category, ingredients, steps, and etc.
 The user can a add a picture by adding a URL if they do not add a picture it automaticaly adds a default picture.
 
@@ -377,6 +377,24 @@ I delete different recipes from different accounts.
  
 * **Result** 
 The result is good, I can delete my own recipes and then store them from the database in mongo db.
+
+* **Verdict**
+The test has passed all the criteria and works like planned.
+
+
+### Logout
+
+* **Plan**
+The plan is to logout of an account.
+
+* **Implementation** 
+Once the user is logged in they can logout just clicking on the logout up in the navigation bar.
+
+* **Test** 
+I logout from different accounts.
+ 
+* **Result** 
+The result is good, I can logout of the application.
 
 * **Verdict**
 The test has passed all the criteria and works like planned.
