@@ -438,6 +438,33 @@ I watched again the videos so I find the solution that was assign value for each
 Everything loads fine to the user edit a recipe.
 
 
+### **Latest Recipes**
+
+* **Bug**
+I wanted to show the six latest recipes on the home page.
+
+* **Fix**
+I made a research how to display the list from back to front, in Jinja documentation was easy to find a function ***reverse*** that is applied inside of the for loop after the list for example: 
+      ```
+      {% for recipe in recipes|reverse %}
+      ```
+Then I needed to display only six recipes, I added an if statement inside of the for loop and according with the number of the loop index it exits of the iteration after six recipes.
+
+* **Verdict**
+Now it works fine with the six latest recipes such as planned.
+
+--------------------------------------------------------------------------------------
+### ****
+
+* **Bug**
+ 
+
+* **Fix**
+
+
+* **Verdict**
+
+--------------------------------------------------------------------------------------
 
 ## **Deployment**
 
