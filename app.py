@@ -27,16 +27,17 @@ def home():
 @app.route('/signin', methods=['GET', 'POST'])
 def signin():
     """
-    Allow user to 
+    Allow user to
     get into the web application
     """
     if request.method == "POST":
         # check if email already exists in db
         user = mongo.db.users.find_one(
-            {'email' : request.form.get('email')})
+            {'email': request.form.get('email')})
         if user:
             # ensure hashed password matches user input
-            if check_password_hash(user['password'], request.form.get('password')):
+            if check_password_hash(
+                    user['password'], request.form.get('password')):
                 user_id = str(user['_id'])
                 session['user_id'] = str(user_id)
                 return redirect(url_for('myRecipes', user_id=user_id))
@@ -55,7 +56,7 @@ def signin():
 @app.route("/signup", methods=['GET', 'POST'])
 def signup():
     """
-    Allow user to 
+    Allow user to
     sign up the webapplication
     """
     if request.method == 'POST':
@@ -73,7 +74,7 @@ def signup():
             'password': generate_password_hash(request.form.get('password'))
         }
         mongo.db.users.insert_one(register)
-        flash('Registration Successful') 
+        flash('Registration Successful')
         return redirect(url_for('signin'))
 
     return render_template('pages/checkuser.html', register=True)
@@ -86,7 +87,7 @@ def recipes():
     """
     recipes = mongo.db.recipes.find()
     return render_template('pages/recipes.html', recipes=recipes)
-    
+
 
 @app.route('/recipe/<recipe_id>')
 def recipe(recipe_id):
@@ -105,9 +106,11 @@ def myRecipes(user_id):
     # grab the session user's name and email from db
     if session['user_id']:
         user = mongo.db.users.find_one({'_id': ObjectId(user_id)})
-        recipes = mongo.db.recipes.find({'user_id': user_id})
+        recipes = mongo.db.recipes.find(
+            {'user_id': user_id})
         name = user['name']
-        return render_template('pages/myrecipes.html', name=name, recipes=recipes)
+        return render_template(
+            'pages/myrecipes.html', name=name, recipes=recipes)
 
     return redirect(url_for('pages/signin'))
 
@@ -133,19 +136,20 @@ def addRecipe(user_id):
     Takes user back to My Recipes
     """
     user = mongo.db.users.find_one({'_id': ObjectId(user_id)})
-    
+
     if request.method == "POST":
-        recipe_image = request.form.get('recipe_image')
+        recipe_image = request.form.get(
+            'recipe_image')
         if len(recipe_image) == 0:
-            image_default = "https://natashaskitchen.com/wp-content/uploads/2012/09/cookbook.jpg"
+            image_default = "https://is.gd/odqOt4"
         else:
             image_default = recipe_image
 
         submit = {
-            "user_id":  user_id,
+            "user_id": user_id,
             "name_recipe": request.form.get("recipe"),
             "category": request.form.get("category"),
-            "time":request.form.get("time"),
+            "time": request.form.get("time"),
             "yield": request.form.get("yield"),
             "ingredients": request.form.get("ingredients"),
             "step1": request.form.get("step1"),
@@ -158,13 +162,14 @@ def addRecipe(user_id):
         flash("Recipe Successfully Added")
         return redirect(url_for("myRecipes", user_id=session['user_id']))
 
-    return render_template("pages/recipe.html", user_id=session['user_id'], add=True )
+    return render_template(
+        "pages/recipe.html", user_id=session['user_id'], add=True)
 
 
 @app.route('/recipe/edit/<user_id>/<recipe_id>', methods=['GET', 'POST'])
 def editRecipe(user_id, recipe_id):
     """
-    Edit recipe and 
+    Edit recipe and
     Salve the new one
     """
     user = mongo.db.users.find_one({'_id': ObjectId(user_id)})
@@ -173,7 +178,7 @@ def editRecipe(user_id, recipe_id):
             "user_id":  user_id,
             "name_recipe": request.form.get("recipe"),
             "category": request.form.get("category"),
-            "time":request.form.get("time"),
+            "time": request.form.get("time"),
             "yield": request.form.get("yield"),
             "ingredients": request.form.get("ingredients"),
             "step1": request.form.get("step1"),
@@ -187,9 +192,8 @@ def editRecipe(user_id, recipe_id):
         return redirect(url_for("myRecipes", user_id=session['user_id']))
 
     recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
-    return render_template('pages/recipe.html', 
-                            user_id=session['user_id'],    
-                            recipe=recipe)
+    return render_template(
+        'pages/recipe.html', user_id=session['user_id'], recipe=recipe)
 
 
 @app.route('/recipe/delete/<recipe_id>')
