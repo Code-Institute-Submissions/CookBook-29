@@ -400,6 +400,104 @@ The result is good, I can logout of the application.
 The test has passed all the criteria and works like planned.
 
 
+## **Bugs**
+
+### **Add an image as default**
+
+* **Bug**  
+When the user is adding a new recipe and they do not have a URL of the recipe image to add, it would break the style because a small default picture would be displayed instead. 
+
+* **Fix**
+I created a statement inside the addRecipe function that checks if the field Recipe Image is empty, if so it adds a default URL to a variable called recipe_image and this variable is assigned to the dictionary that will be sent to the database mongoDB. I also include this statement to the editRecipe function in case of the user edit a recipe and delete the URL of the image.
+
+* **Verdict**
+Now an image default is correctly added and displayed.
+
+
+### **Materialize**
+
+* **Bug**  
+ It is not a properly bug, but it is a bit trick to get things in place.
+
+* **Fix**
+After some days struggling to get things in place, my alternative was switch to bootstrap which for me was a better option.
+
+* **Verdict**
+Now everything is in place working responsively.
+
+
+### **Edit open with content**
+
+* **Bug**
+Each time I edited a recipe, the content did not load in the respective fields. 
+
+* **Fix**
+I watched again the videos so I find the solution that was assign value for each field.
+
+* **Verdict**
+Everything loads fine to the user edit a recipe.
+
+
+### **Latest Recipes**
+
+* **Bug**
+I wanted to show the six latest recipes on the home page.
+
+* **Fix**
+I made a research how to display the list from back to front, in Jinja documentation was easy to find a function ***reverse*** that is applied inside of the for loop after the list for example: 
+      ```
+      {% for recipe in recipes|reverse %}
+      ```
+Then I needed to display only six recipes, I added an if statement inside of the for loop and according with the number of the loop index it exits of the iteration after six recipes.
+
+* **Verdict**
+Now it works fine with the six latest recipes such as planned.
+
+
+### **Spaces in textarea**
+
+* **Bug**
+In the pages add and edit a recipe there are some textareas to ingredients and steps, when the page was loaded some white spaces were loaded inside of the textareas.
+
+* **Fix**
+I had implemented add and edit in the same page and inside of the textarea there is an if statement because of that I created some spaces inside of the textarea. Then I made a research in stackoverflow and the awnser was that the textareas must be written in a single line without space.
+
+* **Verdict**
+When I wrote everything in a single line it worked.
+
+
+### **Pagination**
+
+* **Bug**
+When the number of recipes keep growing it will be a possible problem because of page load time.
+
+* **Verdict**
+For now I haven't found a fix for this issue. I tried to write a for loop with an if to display some recipes but without success.
+
+
+## **Future Implementations🤖**
+
+### **Pagination**
+
+* **Implementation**
+I want to create a function to load only some recipes to enhance page load time.
+
+### **Categories**
+
+* **Implementation**
+I want to create a special session for an administrator where they can add, edit, and delete categories. Categories will be an table in MongoDB, so that when the user is adding or editing a recipe a select field will load.
+
+### **Reviews**
+
+* **Implementation**
+I want to create a section for reviews in each recipe it will be a new table in MongoDB and it is going to be assign with the id of the recipe.
+
+### **Forget the password**
+
+* **Implementation**
+I want to create a mechanism that will allow the user to redeem their password in case of forgetfulness.
+
+
 ## **Deployment**
 
 ### Local Deployment
@@ -497,5 +595,5 @@ To clone the project:
 
 ## **Credits**
 
-* A big thanks to my mentor Simen [EvenTiret](https://github.com/Eventyret)
+* A big thanks to my mentor Simen [Eventyret](https://github.com/Eventyret)
 * A big thanks to [Stackoverflow](https://stackoverflow.com/)
