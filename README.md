@@ -466,6 +466,13 @@ I had implemented add and edit in the same page and inside of the textarea there
 When I wrote everything in a single line it worked.
 
 
+### **pagination**
+
+* **Bug**
+When the number of recipes keep growing it will be a possible problem because of page load time.
+
+* **Verdict**
+For now I haven't found a fix for this issue. I tried to write a for loop with an if to display some recipes but without success.
 
 
 ## **Future Implementations🤖**
