@@ -466,7 +466,7 @@ I had implemented add and edit in the same page and inside of the textarea there
 When I wrote everything in a single line it worked.
 
 
-### **pagination**
+### **Pagination**
 
 * **Bug**
 When the number of recipes keep growing it will be a possible problem because of page load time.
@@ -476,6 +476,11 @@ For now I haven't found a fix for this issue. I tried to write a for loop with a
 
 
 ## **Future Implementations🤖**
+
+### **Pagination**
+
+* **Implementation**
+I want to create a function to load only some recipes to enhance page load time.
 
 ### **Categories**
 
