@@ -466,12 +466,17 @@ I had implemented add and edit in the same page and inside of the textarea there
 When I wrote everything in a single line it worked.
 
 
-## **Future Implementations**
+## **Future Implementations🤖**
 
 ### **Categories**
 
 * **Implementation**
 I want to create a special session for an administrator where they can add, edit, and delete categories. Categories will be an table in MongoDB, so that when the user is adding or editing a recipe a select field will load.
+
+### **Reviews**
+
+* **Implementation**
+I want to create a section for reviews in each recipe it will be a new table in MongoDB and it is going to be assign with the id of the recipe.
 
 
 
