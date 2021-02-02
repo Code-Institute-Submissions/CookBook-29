@@ -414,6 +414,17 @@ I created a statement inside the addRecipe function that checks if the field Rec
 Now an image default is correctly added and displayed.
 
 
+### **Materialize**
+
+* **Bug**  
+ It is not a properly bug, but it is a bit trick to get things in place.
+
+* **Fix**
+After some days struggling to get things in place, my alternative was switch to bootstrap which for me was a better option.
+
+* **Verdict**
+Now everything is in place working responsively.
+
 
 ## **Deployment**
 
