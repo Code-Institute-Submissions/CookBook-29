@@ -453,18 +453,18 @@ Then I needed to display only six recipes, I added an if statement inside of the
 * **Verdict**
 Now it works fine with the six latest recipes such as planned.
 
---------------------------------------------------------------------------------------
-### ****
+
+### **Spaces in textarea**
 
 * **Bug**
- 
+In the pages add and edit a recipe there are some textareas to ingredients and steps, when the page was loaded some white spaces were loaded inside of the textareas.
 
 * **Fix**
-
+I had implemented add and edit in the same page and inside of the textarea there is an if statement because of that I created some spaces inside of the textarea. Then I made a research in stackoverflow and the awnser was that the textareas must be written in a single line without space.
 
 * **Verdict**
+When I wrote everything in a single line it worked.
 
---------------------------------------------------------------------------------------
 
 ## **Deployment**
 
