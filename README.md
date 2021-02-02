@@ -26,10 +26,12 @@ Happy Code! 👨‍💻 Happy days!
     * [Existing Features](#existing-features)
     * [Features to be implemented](#features-to-be-implemented)
 * [Technologies used](#technologies-used)👀
-    * [Languages](#languages)
-    * [Libraries and Frameworks](#libraries-and-frameworks)
-    * [Tools](#tools)
+    * [Languages](#languages)🔍
+    * [Libraries and Frameworks](#libraries-and-frameworks)📚
+    * [Tools](#tools)🔧
 * [Testing](#testing)
+* [Bugs](#bugs)🐞
+* [Future Implementations](#future-implementations)🛸
 * [Deployment](#deployment)
     * [Local Deployment](#local-deployment)
     * [Heroku Deployment](#heroku-deployment)
@@ -167,14 +169,14 @@ step3           | String
 
 ## **Technologies used**👀
 
-### **Languages**
+### **Languages**🔍
 
 * [HTML](https://en.wikipedia.org/wiki/HTML)
 * [CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
 * [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
 * [Python](https://www.python.org/)
 
-### **Libraries and Frameworks**
+### **Libraries and Frameworks**📚
 
 * [MongoDB Atlas](https://www.mongodb.com/)
 * [Flask](https://flask.palletsprojects.com/en/1.1.x/)
@@ -185,7 +187,7 @@ step3           | String
 * [Google Fonts](https://fonts.google.com/)
 * [jQuery](https://jquery.com/)
 
-### **Tools**
+### **Tools**🔧
 * [Git](https://git-scm.com/)
 * [Heroku](https://www.heroku.com/)
 * [Balsamic](https://balsamiq.com/wireframes/)
@@ -400,7 +402,7 @@ The result is good, I can logout of the application.
 The test has passed all the criteria and works like planned.
 
 
-## **Bugs**
+## **Bugs**🐞
 
 ### **Add an image as default**
 
@@ -475,7 +477,7 @@ When the number of recipes keep growing it will be a possible problem because of
 For now I haven't found a fix for this issue. I tried to write a for loop with an if to display some recipes but without success.
 
 
-## **Future Implementations🤖**
+## **Future Implementations**🛸
 
 ### **Pagination**
 
