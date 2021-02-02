@@ -426,6 +426,19 @@ After some days struggling to get things in place, my alternative was switch to 
 Now everything is in place working responsively.
 
 
+### **Edit open with content**
+
+* **Bug**
+Each time I edited a recipe, the content did not load in the respective fields. 
+
+* **Fix**
+I watched again the videos so I find the solution that was assign value for each field.
+
+* **Verdict**
+Everything loads fine to the user edit a recipe.
+
+
+
 ## **Deployment**
 
 ### Local Deployment
