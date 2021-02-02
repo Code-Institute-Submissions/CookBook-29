@@ -400,6 +400,21 @@ The result is good, I can logout of the application.
 The test has passed all the criteria and works like planned.
 
 
+## **Bugs**
+
+### **Add an image as default**
+
+* **Bug**  
+When the user is adding a new recipe and they do not have a URL of the recipe image to add, it would break the style because a small default picture would be displayed instead. 
+
+* **Fix**
+I created a statement inside the addRecipe function that checks if the field Recipe Image is empty, if so it adds a default URL to a variable called recipe_image and this variable is assigned to the dictionary that will be sent to the database mongoDB. I also include this statement to the editRecipe function in case of the user edit a recipe and delete the URL of the image.
+
+* **Verdict**
+Now an image default is correctly added and displayed.
+
+
+
 ## **Deployment**
 
 ### Local Deployment
@@ -497,5 +512,5 @@ To clone the project:
 
 ## **Credits**
 
-* A big thanks to my mentor Simen [EvenTiret](https://github.com/Eventyret)
+* A big thanks to my mentor Simen [Eventyret](https://github.com/Eventyret)
 * A big thanks to [Stackoverflow](https://stackoverflow.com/)
