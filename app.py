@@ -174,6 +174,12 @@ def editRecipe(user_id, recipe_id):
     """
     user = mongo.db.users.find_one({'_id': ObjectId(user_id)})
     if request.method == "POST":
+        recipe_image = request.form.get(
+            'recipe_image')
+        if len(recipe_image) == 0:
+            image_default = "https://is.gd/odqOt4"
+        else:
+            image_default = recipe_image
         submit = {
             "user_id":  user_id,
             "name_recipe": request.form.get("recipe"),
@@ -185,7 +191,7 @@ def editRecipe(user_id, recipe_id):
             "step2": request.form.get("step2"),
             "step3": request.form.get("step3"),
             "created_by": user['name'],
-            "recipe_image": request.form.get('recipe_image')
+            "recipe_image": image_default
         }
         mongo.db.recipes.update({'_id': ObjectId(recipe_id)}, submit)
         flash("Recipe Successfully Updated")
