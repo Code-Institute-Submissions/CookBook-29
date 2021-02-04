@@ -3,11 +3,9 @@
 {% include 'components/navigation/navigation.html' %}
     <div class="container text-center mt-5">
         <form id="query" action="{{ url_for('search') }}" method="POST" class="form-inline">
-            <label for="query">Search Recipes </label>
-            <input class="form-control mr-sm-2" type="text" name="query" placeholder="Search" aria-label="Search">
+            <input class="form-control mr-sm-2" type="text" name="query" placeholder="Search Recipes" aria-label="Search">
             <button class="btn btn-outline-success " type="submit">Search</button>
             <a href="{{ url_for('home') }}" type="button" class="btn btn-outline-danger ml-4">Reset</a>
-            
         </form>
     </div>
     <div class="container jumbotron main mt-5">

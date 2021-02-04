@@ -5,17 +5,15 @@
     
     <h2 class="text-center text-header">Recipes</h2>
 
-    <div class="container text-center mt-3 mb-3">
-        <form action="{{ url_for('search_recipes') }}" method="POST" class="form-inline">
-            <label for="query">Search Recipes </label>
-            <input class="form-control mr-sm-2" type="text" name="query" placeholder="Search" aria-label="Search">
+    <div class="container text-center mt-2">
+        <form id="query" action="{{ url_for('search') }}" method="POST" class="form-inline">
+            <input class="form-control mr-sm-2" type="text" name="query" placeholder="Search Recipes" aria-label="Search">
             <button class="btn btn-outline-success " type="submit">Search</button>
-            <a href="{{ url_for('recipes') }}" type="button" class="btn btn-outline-danger ml-4">Reset</a>
-            
+            <a href="{{ url_for('home') }}" type="button" class="btn btn-outline-danger ml-4">Reset</a>
         </form>
     </div>
 
-    <div class="container jumbotron main">
+    <div class="container jumbotron main mt-2">
         <div class="row text-center">
             {% for recipe in recipes|reverse %}
             <div class="col-sm-12 col-md-3 card" onmouseover="over(this)" onmouseout="out(this)">
