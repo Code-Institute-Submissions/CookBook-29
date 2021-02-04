@@ -1,9 +1,6 @@
-var card = document.getElementById('card')
-
-function over(){
+function over(card){
     card.style.background = '#f1bc80'
-}
-
-function out(){
+    }
+    function out(card){
     card.style.background = '#ffeedb'
-}
+    }
