@@ -46,6 +46,10 @@ body{
     font-weight: 900;
 }
 
+.form-inline{
+    display: contents;
+}
+
 /* Cards Recipe */
 .card{
     width: 18rem;
