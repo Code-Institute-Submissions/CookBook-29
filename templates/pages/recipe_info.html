@@ -8,12 +8,12 @@
         <div class="row">
             <div class="col">
                 <div class="container jumbotron main">
-                    <h3>{{ recipe.name_recipe|capitalize }}</h3>
+                    <h1 class="recipe-name">{{ recipe.name_recipe|capitalize }}</h1>
                     <div class="row">
-                        <div class="col-12 col-md-6">
+                        <div class="col-11 col-md-6">
                             <img class="recipe-image" src="{{ recipe.recipe_image }}">
                         </div>
-                        <div class="col-12 col-md-5 details">
+                        <div class="col-11 col-md-5 details">
                             <div class="row mt-3 mb-3">
                                 <i class="fab fa-buffer prefix"></i>Category: {{ recipe.category }}
                             </div>
@@ -31,30 +31,45 @@
                 </div>
                 <div class="container jumbotron main">
                     <div class="ingredients">
-                        <h3><i class="far fa-sticky-note prefix"></i>Ingredients</h3><hr>
-                        <p class="ingredients">{{ recipe.ingredients }}</p>
+                        <h3 class="collapsible"><i class="far fa-sticky-note prefix"></i> Ingredients 
+                            <button class="ingredients-btn">
+                                <i class="fas fa-arrow-alt-circle-down"></i>
+                            </button>
+                        </h3>
+                        <div id="content">
+                            <p class="ingredients">{{ recipe.ingredients }}</p>
+                        </div>
                     </div>
-                    <div class="steps-text center-align">
-                        <h3><i class="fas fa-shoe-prints prefix"></i>Steps</h3><hr>
-                        <ul>
-                            <li>
-                                <h5>Step 1</h5>
-                                <p>{{ recipe.step1 }}</p>
-                            </li>
-                            {% if recipe.step2|length > 0 %}
+                    <hr>
+
+
+                    <div class="steps dropd">
+                        <h3 class="collapsible"><i class="fas fa-shoe-prints prefix"></i> Steps 
+                            <button class="step-btn" >
+                                <i class="fas fa-arrow-alt-circle-down"></i>
+                            </button>
+                        </h3>
+                        <div id="content">
+                            <ul>
                                 <li>
-                                    <h5>Step 2</h5>
-                                    <p>{{ recipe.step2 }}</p>
+                                    <h5>Step 1</h5>
+                                    <p>{{ recipe.step1 }}</p>
                                 </li>
-                            {% endif %}
-                            {% if recipe.step3|length > 0 %}
-                                <li>
-                                    <h5>Step 3</h5>
-                                    <p>{{ recipe.step3 }}</p>
-                                </li>
-                            {% endif %}
-                        </ul>
-                    </div>
+                                {% if recipe.step2|length > 0 %}
+                                    <li>
+                                        <h5>Step 2</h5>
+                                        <p>{{ recipe.step2 }}</p>
+                                    </li>
+                                {% endif %}
+                                {% if recipe.step3|length > 0 %}
+                                    <li>
+                                        <h5>Step 3</h5>
+                                        <p>{{ recipe.step3 }}</p>
+                                    </li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </div><hr>
                 </div>
             </div>
         </div>
