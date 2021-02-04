@@ -15,7 +15,7 @@
         <div class="row text-center">
             {% for recipe in recipes|reverse %}
                 {% if loop.index < 7 %}
-                    <div class="col-sm-12 col-md-3 card" id="card" onmouseover="over()" onmouseout="out()">
+                    <div class="col-sm-12 col-md-3 card" onmouseover="over(this)" onmouseout="out(this)">
                         <img class="card-img-top" src="{{ recipe.recipe_image }}" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title"><strong>{{ recipe.name_recipe|capitalize }}</strong></h5>
